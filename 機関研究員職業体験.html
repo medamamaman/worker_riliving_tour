@@ -14,6 +14,24 @@
 /*
 	Reposition the Sidebar 'footer' tagged passage.
 */
+body{
+    background-color: black;
+    color: white;
+}
+
+@media screen and (max-width: 768px) {
+    body{
+        background-color: black;
+         color:green;
+     }
+ }
+ 
+ @media screen and (max-width: 480px) {
+    body{
+        background-color: black;
+         color:red;
+     }
+ }
 tw-sidebar {
 	position: fixed;
 	top: 0;
@@ -23,9 +41,23 @@ tw-sidebar {
 	margin-top: 0%;
     outline:solid;/* padding-top of the tw-story element. */
 	padding: 0 0.5em 0.5em 0.5em;
+  font-size:100%;
 	text-align: center;
 	background-color: silver;
-    overflow-x:auto;
+    overflow:auto;
+}
+tw-passage {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 80%;						/* padding-right of the tw-story element. */
+	height: 100%;
+	margin-top: 0%;/* padding-top of the tw-story element. */
+	padding: 0 0 0 0;
+	font-size:smaller;
+	text-align: left;
+	background-color: white;
+    overflow:auto;
 }
 tw-icon {
 	text-align: right;
@@ -61,7 +93,7 @@ tw-story{
 
 
 [[業務を開始する。-&gt;メインメニュー]]
-</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="1700,1175" size="100,100">&lt;head&gt;
+</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2050,575" size="100,100">&lt;head&gt;
 &lt;style&gt;
 a {
  color:red
@@ -130,9 +162,10 @@ a {
 &lt;li&gt;[[1階-&gt;D棟一階]]
 &lt;li&gt;[[2階-&gt;D棟2階]](if: $hintD2 is 1)[(被検体安置室)]
 &lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="675,1950" size="100,100">&lt;h2&gt;A棟1階&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="800,2050" size="100,100">&lt;h2&gt;A棟2階&lt;/h2&gt;
+[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="675,1950" size="100,100">&lt;h2&gt;A棟1階&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="700,2150" size="100,100">&lt;h2&gt;A棟2階&lt;/h2&gt;
 (if:$flagA2 is 1)[研究補助員用の休憩室にたどり着いた。]
-(if:$flagA2 is 0)[A棟の二階の一角に研究補助員用の休憩室にたどり着いた。
+(if:$flagA2 is 0)[A棟の二階を散策していると、一角に研究補助員用の休憩室を見つけた。
 ここに至るまでの道のりはひどく潔癖な様相をしていたが、この部屋は今での様子と打って変わって人のぬくもりが感じられる。例えば人数分のベッドだったり、カレンダーだったり、(colour:red)[中央棟一階の購買室]で購入したと思しき弁当が机の上に置かれていたりとかなり自由は確保されている事がわかる。それもそこそこ広く、どうやら5人くらいは寝泊りできそうだ。
 
 部屋の中には一人の女性がいた。彼女はこちらを見るとにこやかに挨拶をしてきた。
@@ -140,13 +173,16 @@ a {
 「始めまして！　話は聞いてるよ、新たに配属された研究補助員だよね？　
 私は研究補助員の河西です。先輩にあたるんじゃないかな？
 でも全く畏まることないから、いつでも話に来てくださいね！」
-/
+
 (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)
-(if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。](set:$hintC1=$hintC1+1)(set:$flagA2=$flagA2+1)]]
+(if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。](set:$hintC1=$hintC1+1)(if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)](set:$flagA2=$flagA2+1)]]
 
 
 
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="950,2175" size="100,100">&lt;h2&gt;A棟3階&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="950,2325" size="100,100">&lt;h2&gt;A棟上部&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">&lt;h2&gt;B棟1階&lt;/h2&gt;</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">自分用の休憩室にたどり着いた。
+[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="950,2175" size="100,100">&lt;h2&gt;A棟3階&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="950,2325" size="100,100">&lt;h2&gt;A棟上部&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">&lt;h2&gt;B棟1階&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">自分用の休憩室にたどり着いた。
 
 (if:$hintmenu is 0)[初めて入る部屋ではあったが、確かにどこか安心感がある。
 (text-colour:red)[ベッド]があるため、もし疲労を感じたらここで休んでもいいだろう。&lt;bl&gt;&lt;/p&gt;
@@ -155,7 +191,7 @@ a {
 (text-colour:yellow)[研究員用手帳]を手に入れた。
 (text-colour:green)[ヒントメニュー]が解放された。&lt;br&gt;次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。(set:$hintmenu to 1))&lt;br&gt;
 (text-colour:yellow)[研究員用携帯端末]を手に入れた。
-(text-colour:green)[電話]が解放された。&lt;br&gt;次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。(set:$commmenu to 1))]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2525,2450" size="100,100">&lt;h2&gt;B棟3階&lt;/h2&gt;
+(text-colour:green)[電話]が解放された。&lt;br&gt;知り合いでさえあればお互いの電話番号を登録できる。コミュニケーションシップを行うため積極的に活用しよう。(set:$commmenu to 1))]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2525,2450" size="100,100">&lt;h2&gt;B棟3階&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2650,2450" size="100,100">&lt;h2&gt;B棟上部&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="17" name="C棟一階" tags="" position="3475,1725" size="100,100">&lt;h2&gt;C棟1階&lt;/h2&gt;
 現在準備中。</tw-passagedata><tw-passagedata pid="18" name="C棟2階" tags="" position="3600,1725" size="100,100">&lt;h2&gt;C棟2階&lt;/h2&gt;
@@ -164,8 +200,9 @@ a {
 現在工事中。</tw-passagedata><tw-passagedata pid="21" name="D棟一階" tags="" position="2975,225" size="100,100">&lt;h2&gt;D棟1階&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="2900,475" size="100,100">&lt;h2&gt;D棟2階&lt;/h2&gt;
 現在準備中。</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="375,1250" size="100,100">&lt;h2&gt;中央棟1階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1250" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;現在工事中。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1225" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;
+現在工事中。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,725" size="100,100">&lt;HTML&gt;
 &lt;body&gt;
 ………………………………
@@ -175,7 +212,7 @@ a {
 &lt;div align=&quot;center&quot;&gt;
 &lt;h1&gt;誓約書&lt;/h1&gt;
 &lt;/div&gt;
-この度、わたしは貴機関に第四級職員及び研究補助員として雇用されるにあたり、下記の事項を遵守する事を誓約いたします。&lt;br&gt;
+この度、わたしは貴機関に第四級職員及び第四級研究補助員として雇用されるにあたり、下記の事項を遵守する事を誓約いたします。&lt;br&gt;
 &lt;ol&gt;
 &lt;li&gt; 就業規則、その他諸規則を遵守し、誠実に勤務を行う事。&lt;/li&gt;
 &lt;li&gt; また特例を除き諸規則に違反する行動を行った場合、如何なる罰則でも受け入れる事。&lt;/li&gt;
@@ -213,14 +250,14 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 (if:$hintB1 is 0)[(colour:yellow)[B棟1階が判明した。](set:$hintB1=$hintB1+1)]
 (if:$hintD2 is 0)[(colour:yellow)[D棟2階の用途が判明した。](set:$hintD2=$hintD2+1)]
 &lt;/body&gt;
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1700,350" size="100,100">今はまだ誰とも知り合いではない。</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1450,350" size="100,100">
-(if:$commmenu is not 0)[[研究員用携帯端末]　|phone2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?phone1)(hide:?phone2)]]
-|phone1)[機関所属研究員にのみ渡された携帯端末。
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1700,350" size="100,100">今はまだ誰とも知り合いではない。</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1450,350" size="100,100">&lt;h1&gt;アイテムメニュー&lt;/h1&gt;
+(if:$commmenu is not 0)[[研究員用携帯端末]　
+|phone2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?phone1)(hide:?phone2)]]|phone1)[機関所属研究員にのみ渡された携帯端末。
 研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。(link-rerun:&quot;閉じる&quot;)[(hide:?phone1)(show:?phone2)]　[[使用する-&gt;電話]]
 ]]
 
-(if:$hintmenu is not 0)[[研究員用ノート]　|note2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?note1)(hide:?note2)]]
-|note1)[研究員に配布されている機関専用のノート。
+(if:$hintmenu is not 0)[[研究員用ノート]　
+|note2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?note1)(hide:?note2)]]|note1)[研究員に配布されている機関専用のノート。
 その大きさからノートというよりもメモ帳と言った方が適切。
 ボールペンホルダーがあるため書き込みやすい。(link-rerun:&quot;閉じる&quot;)[(hide:?note1)(show:?note2)]　[[使用する-&gt;ヒントメニュー]]
 ]]
@@ -230,7 +267,12 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 (hidden:)[説明文]&lt;&quot;タイトル&quot;
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
-研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="note2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?note1)(hide:?note2)" tags="" position="1275,350" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="phone2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?phone1)(hide:?phone2)" tags="" position="1275,475" size="100,100"></tw-passagedata></tw-storydata>
+研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="&lt;head&gt;" position="200,75" size="100,100">&lt;head&gt;
+　&lt;mark&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
