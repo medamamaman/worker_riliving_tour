@@ -87,7 +87,7 @@ tw-icon {
 
 
 [[業務を開始する。-&gt;メインメニュー]]
-</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2050,550" size="100,100">{
+</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2000,850" size="100,100">{
 &lt;head&gt;
 &lt;style&gt;
 a {
@@ -155,7 +155,7 @@ a {
 &lt;li&gt;[[2階-&gt;D棟2階]](if: $hintD2 is 1)[(被検体安置室)]
 &lt;/ul&gt;
 [[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="675,1950" size="100,100">&lt;h2&gt;A棟1階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="700,2150" size="100,100">&lt;h2&gt;A棟2階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="700,2150" size="100,100">&lt;h2&gt;A棟2階&lt;/h2&gt;
 (if:$flagA2 &gt;= 1)[研究補助員用の休憩室にたどり着いた。
 中には河西がいた。「どうも！こんにちは、何か用事ですか？」
 
@@ -176,9 +176,9 @@ a {
                          (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)
 (if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。](set:$hintC1=$hintC1+1)](if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)](set:$flagA2=$flagA2+1)
 (link:&quot;早速話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]]]]</tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="1175,2200" size="100,100">&lt;h2&gt;A棟3階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="950,2325" size="100,100">&lt;h2&gt;A棟上部&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">&lt;h2&gt;B棟1階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">自分用の休憩室にたどり着いた。
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="950,2325" size="100,100">&lt;h2&gt;A棟上部&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">&lt;h2&gt;B棟1階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">自分用の休憩室にたどり着いた。
 
 (if:$hintmenu is 0)[初めて入る部屋ではあったが、確かにどこか安心感がある。
 (text-colour:red)[ベッド]があるため、もし疲労を感じたらここで休んでもいいだろう。&lt;bl&gt;&lt;/p&gt;
@@ -188,18 +188,18 @@ a {
 (text-colour:green)[ヒントメニュー]が解放された。&lt;br&gt;次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。(set:$hintmenu to 1))&lt;br&gt;
 (text-colour:yellow)[研究員用携帯端末]を手に入れた。
 (text-colour:green)[電話]が解放された。&lt;br&gt;知り合いでさえあればお互いの電話番号を登録できる。コミュニケーションシップを行うため積極的に活用しよう。(set:$commmenu to 1))]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2525,2450" size="100,100">&lt;h2&gt;B棟3階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2650,2450" size="100,100">&lt;h2&gt;B棟上部&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="17" name="C棟一階" tags="" position="3475,1725" size="100,100">&lt;h2&gt;C棟1階&lt;/h2&gt;
-現在準備中。</tw-passagedata><tw-passagedata pid="18" name="C棟2階" tags="" position="3600,1725" size="100,100">&lt;h2&gt;C棟2階&lt;/h2&gt;
-現在準備中。</tw-passagedata><tw-passagedata pid="19" name="C棟3階" tags="" position="3725,1700" size="100,100">&lt;h2&gt;C棟3階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="20" name="C棟上部" tags="" position="3675,1550" size="100,100">&lt;h2&gt;C棟上部&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="21" name="D棟一階" tags="" position="2975,225" size="100,100">&lt;h2&gt;D棟1階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="2900,475" size="100,100">&lt;h2&gt;D棟2階&lt;/h2&gt;
-現在準備中。</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="375,1250" size="100,100">&lt;h2&gt;中央棟1階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1225" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,950" size="100,100">
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2650,2450" size="100,100">&lt;h2&gt;B棟上部&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="17" name="C棟一階" tags="" position="3475,1725" size="100,100">&lt;h2&gt;C棟1階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="18" name="C棟2階" tags="" position="3600,1725" size="100,100">&lt;h2&gt;C棟2階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="19" name="C棟3階" tags="" position="3725,1700" size="100,100">&lt;h2&gt;C棟3階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="20" name="C棟上部" tags="" position="3675,1550" size="100,100">&lt;h2&gt;C棟上部&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="21" name="D棟一階" tags="" position="2975,225" size="100,100">&lt;h2&gt;D棟1階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="2900,475" size="100,100">&lt;h2&gt;D棟2階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="375,1250" size="100,100">&lt;h2&gt;中央棟1階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1225" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,950" size="100,100">
 ………………………………
 &lt;div align=&quot;right&quot;&gt;
 (current-date:)
@@ -220,7 +220,7 @@ a {
 
 [[サインする-&gt;メインアナウンス1 初めて来た人向け (変数ライブラリ)]]
 (link: &quot;サインしない&quot;)[(display:&quot;end1　除名完了&quot;)]</tw-passagedata><tw-passagedata pid="29" name="中央広場" tags="" position="725,1300" size="100,100">&lt;h2&gt;中央広場&lt;/h2&gt;
-現在準備中。</tw-passagedata><tw-passagedata pid="30" name="サイドバー　試験的" tags="footer" position="875,650" size="200,200">(append: ?SideBar)[\
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="30" name="サイドバー　試験的" tags="footer" position="1025,725" size="200,200">(append: ?SideBar)[\
 	(if:$mainmenu is not 0)[[メインメニュー]]
     (if:$hintmenu is not 0)[[ヒントメニュー]]
     (if:$itemmenu is not 0)[[アイテム]]
@@ -267,7 +267,28 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 (hidden:)[説明文]&lt;&quot;タイトル&quot;
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
-研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="header" position="100,0" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="用語集" tags="" position="450,700" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;
+研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="header" position="100,0" size="100,100">	&lt;!-- Create a variable to track the position within the $typewriterText string --&gt;
+	(set: $typewriterPos to 1)
+	
+	&lt;!-- Create a hook to hold the typed text --&gt;
+	|typewriterOutput&gt;[]
+	
+	&lt;!-- Set a delay of 0.2 seconds per loop --&gt;
+	(live: 20ms)[
+
+		&lt;!-- Add the next character to the hook --&gt;
+		(append: ?typewriterOutput)[(print: $typewriterText&#39;s $typewriterPos)]
+		
+		&lt;!-- Update the position --&gt;
+		(set: $typewriterPos to it + 1)
+		
+		&lt;!-- If it&#39;s gone past the end, stop --&gt;
+		(if: $typewriterPos is $typewriterText&#39;s length + 1)[
+			(stop:)
+		]
+	]
+}
+</tw-passagedata><tw-passagedata pid="36" name="用語集" tags="" position="450,700" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;
 &lt;!--(prepend:newline)[]--&gt;
 (set:_unkhown to &quot;??????&quot;)
 &lt;h1&gt;用語集&lt;/h1&gt;
