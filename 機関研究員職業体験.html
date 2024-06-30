@@ -60,7 +60,7 @@ tw-icon {
 	text-align: right;
 	padding-right: 0.75em;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="red"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2000,850" size="100,100">…………&lt;/bl&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="red"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2000,1075" size="100,100">…………&lt;/bl&gt;
 『誓約書が受理されたため、貴方は正式に第四級研究員としての雇用が決定いたしました。』
 『それでは、今後は当機関の研究員としての業務に励んでいただきます。』&lt;bl&gt;
 
@@ -101,8 +101,7 @@ a {
  &lt;div align=&quot;center&quot;&gt;
  &quot;[END1 契約破棄]&quot;
  &lt;/div&gt;
- }</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1200" size="200,200">&lt;html&gt;
-&lt;body&gt;
+ }</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1200" size="200,200">
 (set:$mainmenu to 1)(set:$itemmenu to 1)(set:$libmenu to 1)(set:$savemenu to 1)\
 &lt;h2&gt;廊下&lt;/h2&gt;
 どこに向かおうか？&lt;bl&gt;
@@ -112,10 +111,7 @@ a {
 &lt;li&gt;[[B棟]]
 &lt;li&gt;[[C棟]]
 &lt;li&gt;[[D棟]]
-&lt;/ul&gt;
-&lt;/body&gt;
-&lt;/html&gt;
-</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="600,1100" size="100,100">&lt;html&gt;
+&lt;/ul&gt;</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="725,1025" size="100,100">&lt;html&gt;
 &lt;body&gt;
 &lt;h1&gt;中央棟&lt;/h1&gt;
 &lt;ul&gt;
@@ -203,7 +199,7 @@ a {
 現在工事中。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1225" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;
 現在工事中。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,725" size="100,100">
+現在工事中。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,950" size="100,100">
 ………………………………
 &lt;div align=&quot;right&quot;&gt;
 (current-date:)
@@ -223,8 +219,7 @@ a {
 
 
 [[サインする-&gt;メインアナウンス1 初めて来た人向け (変数ライブラリ)]]
-(link: &quot;サインしない&quot;)[(display:&quot;end1　除名完了&quot;))]
-</tw-passagedata><tw-passagedata pid="29" name="中央広場" tags="" position="725,1300" size="100,100">&lt;h2&gt;中央広場&lt;/h2&gt;
+(link: &quot;サインしない&quot;)[(display:&quot;end1　除名完了&quot;)]</tw-passagedata><tw-passagedata pid="29" name="中央広場" tags="" position="725,1300" size="100,100">&lt;h2&gt;中央広場&lt;/h2&gt;
 現在準備中。</tw-passagedata><tw-passagedata pid="30" name="サイドバー　試験的" tags="footer" position="875,650" size="200,200">(append: ?SideBar)[\
 	(if:$mainmenu is not 0)[[メインメニュー]]
     (if:$hintmenu is not 0)[[ヒントメニュー]]
@@ -232,6 +227,9 @@ a {
     (if:$commmenu is not 0)[[電話]]
     (if:$libmenu is not 0)[[用語集]]
     (if:$savemenu is not 0)[(link:&quot;記録/読込&quot;)[(b4r:&quot;dotted&quot;)[(display:&quot;記録/読込&quot;)]]]
+    (if:$savemenu is 0)[(if: (saved-games: ) contains &quot;Slot&quot;)[
+  (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
+]]
 ]
 &lt;!--タグ付けでfooterに設定する事出反映される。このタグは重要--&gt;</tw-passagedata><tw-passagedata pid="31" name="ヒントメニュー" tags="ヒント" position="1000,475" size="100,100">A棟二階はどうやら(colour:red)[研究補助員用の休憩室]があったはずである。そこに行って何か話を聞いてもいいかもしれない。
 B棟一階には(colour:red)[資料室]があるはずだ。資料があればそこにたむろしている職員もあるだろうし、人手を欲しているはずだ。
@@ -239,7 +237,7 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 
 (if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)]
 (if:$hintB1 is 0)[(colour:yellow)[B棟1階が判明した。](set:$hintB1=$hintB1+1)]
-(if:$hintD2 is 0)[(colour:yellow)[D棟2階の用途が判明した。](set:$hintD2=$hintD2+1)]</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="675,275" size="100,100">今はまだ誰とも知り合いではない。
+(if:$hintD2 is 0)[(colour:yellow)[D棟2階の用途が判明した。](set:$hintD2=$hintD2+1)]</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="700,250" size="100,100">今はまだ誰とも知り合いではない。
 [[河西研究補助員]]</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="675,375" size="100,100">&lt;h1&gt;アイテムメニュー&lt;/h1&gt;
 &lt;!--
 (if:コマンド is not)[[アイテム名]
@@ -270,13 +268,19 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
 研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="header" position="100,0" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="用語集" tags="" position="450,700" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;
-(prepend:newline)[]
+&lt;!--(prepend:newline)[]--&gt;
 (set:_unkhown to &quot;??????&quot;)
 &lt;h1&gt;用語集&lt;/h1&gt;
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※あなたは第四級研究補助員であるため、いくつかの情報へのアクセスが禁止されています。]
 &lt;h3&gt;機関について&lt;/h3&gt;\
 (if:$kikaninfo1  is 1)[_unkhown] \
 	(else:)[当機関は■■■■年に■■で創設された国際的研究団体です。
-当機関はこの世界における全ての未知の解明を目的として設立されました。]</tw-passagedata><tw-passagedata pid="37" name="記録/読込" tags="" position="750,750" size="100,100">{(link:&quot;記録&quot;)[
+当機関はこの世界における全ての未知の解明、あるいは未知によって引き起こされる社会的混乱の鎮圧、または社会的混乱の未然防止を目的として設立されました。
+当機関は■■■■■■家による資金援助を受け設立されましたが、現在では独立して活動しています。
+当機関は世界各地に支部を有しており、南極、月面、■■支部を含め現在■■■■程度の支部を有しています。
+]
+&lt;h3&gt;関連人物&lt;/h3&gt;
+&lt;h3&gt;怪異&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="37" name="記録/読込" tags="" position="750,750" size="100,100">{(link:&quot;記録&quot;)[
   (if:(save-game:&quot;Slot&quot;))[
     記録処理が完了しました。
   ](else: )[
@@ -285,7 +289,7 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 ]}
 {(if: (saved-games: ) contains &quot;Slot&quot;)[
   (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
-]}</tw-passagedata><tw-passagedata pid="38" name="河西研究補助員" tags="" position="850,200" size="100,100">テストです！</tw-passagedata></tw-storydata>
+]}</tw-passagedata><tw-passagedata pid="38" name="河西研究補助員" tags="" position="1100,225" size="100,100">テストです！</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
