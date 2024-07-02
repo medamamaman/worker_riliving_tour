@@ -9,64 +9,191 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 機関研究員職業体験.</tw-noscript></noscript></tw-story>
-<tw-storydata name="機関研究員職業体験" startnode="28" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="1A04B8EB-5077-4382-9AE0-51A076C10B01" options="" tags="システム導入用" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "UserStylesheet" */
+<tw-storydata name="機関研究員職業体験" startnode="28" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="1A04B8EB-5077-4382-9AE0-51A076C10B01" options="" tags="システム導入用" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "UserStylesheet" */
 /*
 	Reposition the Sidebar 'footer' tagged passage.
 */
+/*平常時*/
 tw-story{
   color:black;
   background-color:white;
 }
-/*タブレットの大きさの時*/
-@media screen and (max-width: 768px) {
-    tw-story{
-        
-     }
- }
- /*スマホ（縦）の時*/
- @media screen and (max-width: 480px) {
-    tw-story{
-     }
- }
+tw-passage {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 80%;	/* padding-right of the tw-story element. */
+	height: 100%;
+	margin-top: 0%;/* padding-top of the tw-story element. */
+	padding: 0 0 0% 0;
+	font-size:80%;
+	text-align: left;
+    overflow:auto;
+}
 tw-sidebar {
 	position: fixed;
 	top: 0;
 	left: 0;
-	width: 15%;						/* padding-right of the tw-story element. */
+	width: 20%;						/* padding-right of the tw-story element. */
 	height: 100%;
+    width: 100%
 	margin-top: 0%;
     outline:solid;/* padding-top of the tw-story element. */
-	padding: 0 0.5em 0.5em 0.5em;
+	padding: 0 0 0 0;
   font-size:100%;
   	writing-mode:horizontal
 	text-align: center;
 	background-color: silver;
     overflow:auto;
 }
-tw-passage {
-	position: fixed;
-	top: 0;
-	right: 0;
-	width: 80%;						/* padding-right of the tw-story element. */
-	height: 100%;
-	margin-top: 0%;/* padding-top of the tw-story element. */
-	padding: 0 0 0.5% 0.5%;
-	font-size:smaller;
-	text-align: left;
-	background-color: white;
-    overflow:auto;
-}
 tw-icon {
-	text-align: right;
-	padding-right: 0.75em;
+	text-align: center;
+	padding-right: 0;
+　}
+/*タブレットの大きさの時*/
+@media (max-width:768px) {
+    tw-passage{
+      width:100%;
+      	font-size:70%;
+      writing-mode:vertical;
+      overflow-y:auto;
+     }
+    tw-sidebar{
+    width:0
+  }
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="red"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2000,1075" size="100,100">…………&lt;/bl&gt;
+ /*スマホ（縦）の時*/
+@media all and (max-width:480px) {
+    tw-passage{
+      	font-size:60%;
+      /*下は後で消す*/
+      width:90%;
+      right:0
+      writing-mode:vertical;
+      overflow-y:auto;
+     }
+  tw-sidebar{
+    width:0
+  }
+ } 
+/*以下はハンバーガーメニュー*/
+@media all and (max-width:768px){
+.menu-btn {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    height: 60px;
+    width: 60px;
+    justify-content: center;
+    align-items: center;
+    z-index: 90;
+    background-color: gray;
+    opacity:50%;
+}
+.menu-btn span,
+.menu-btn span:before,
+.menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+  
+    position: absolute;
+}
+.menu-btn span:before {
+    bottom: 8px;
+}
+.menu-btn span:after {
+    top: 8px;
+}
+#menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+}
+#menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+}
+#menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+#menu-btn-check {
+    display: none;
+}
+/*ハンバーガーメニューの展開後の姿*/
+.menu-content {
+    width: 100%;
+    height: 100%;
+    filter:opacity(20);
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 80;
+    opacity:20%;
+    background-color:gray;
+}
+.menu-content ul {
+    padding: 70px 10px 0;
+}
+.menu-content ul li {
+    border-bottom: solid 1px #ffffff;
+    list-style: none;
+}
+.menu-content ul li a {
+    display: block;
+    width: 100%;
+    font-size: 15px;
+    box-sizing: border-box;
+    color:#ffffff;
+    text-decoration: none;
+    padding: 9px 15px 10px 0;
+    position: relative;
+}
+.menu-content ul li a::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-top: solid 2px #ffffff;
+    border-right: solid 2px #ffffff;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 11px;
+    top: 16px;
+}
+.menu-content {
+    width: 60%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 100%;/*leftの値を変更してメニューを画面外へ*/
+    z-index: 80;
+    vertical-align:middle;
+    text-align:center;
+    font-size:large;
+    color:white;
+    letter-spacing:0.5em
+    background-color: gray;
+    opacity:80%;
+    transition: all 0.5s;/*アニメーション設定*/
+}
+#menu-btn-check:checked ~ .menu-content {
+    right: 40%;/*メニューを画面内へ*/
+}
+}
+@media(min-width:769px){
+  .hamburger-menu {
+    display:none;
+  }
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="orange"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2000,1075" size="100,100">…………&lt;/bl&gt;
 『誓約書が受理されたため、貴方は正式に第四級研究員としての雇用が決定いたしました。』
 『それでは、今後は当機関の研究員としての業務に励んでいただきます。』&lt;bl&gt;
 (click:?page)[
-『第四級研究員の業務及び業務権限は主に、』&lt;bl&gt;
-(click:?page)[
+『第四級研究員の業務及び業務権限は主に、』
 『「(colour:red)[上級職員からの要請の受理]」。』
+『「ならびに上級職員による(colour:blue)[事象]研究の(colour:red)[補助]」。』
 『「同級職員との(colour:red)[コミュニケーションシップ]」。』
 『「上級職員の許可を経た上での(colour:red)[個人研究]」。』
 『「(colour:red)[機関内雑務]」。』&lt;bl&gt;
@@ -78,16 +205,16 @@ tw-icon {
 『また1時間以内にお越しいただけなかった場合、本人の承諾なしに(colour:red)[しかるべき処置]を行います。』
 (click:?page)[
 『また、あなたは機関雇用■■■特別措置制度を実施して(colour:red)[特別に雇用が受理された研究員]である事を忘れないでください。』
-(click:?page)[
+
 『また本機関にて雇用登録を完了したため、体内にGPS付きマイクロチップが取り付けられています。上級研究員からの雇用があった場合には当チップを使用して連絡されます。』
 (click:?page)[
 『あなたの休憩室は(text-colour:red)[B棟2階]にあります。勤務時間外の過ごし方は自由ですが、自室での休憩を推奨します。また、もしあなたがどのような業務に取り掛かればいいのかわからない場合には、自室の(colour:red)[研究員手帳]を確認すると次の業務のためのヒントが得られるかもしれません。また、休憩室に設置されている(text-colour:red)[研究補助員用携帯端末]を使えば、他研究員と交流を図る事ができます。効果的に用いてください。』
 
 『それでは、これにて新人研究員用アナウンスメントを終了いたします。』
 
-(click:?page)[
+
 [[業務を開始する。-&gt;メインメニュー]]
-]]]]]]]</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2000,850" size="100,100">{
+]]]]</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2000,850" size="100,100">{
 &lt;head&gt;
 &lt;style&gt;
 a {
@@ -101,9 +228,11 @@ a {
  &lt;div align=&quot;center&quot;&gt;
  &quot;[END1 契約破棄]&quot;
  &lt;/div&gt;
- }</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1200" size="200,200">
-(set:$mainmenu to 1)(set:$itemmenu to 1)(set:$libmenu to 1)(set:$savemenu to 1)\
-&lt;h2&gt;廊下&lt;/h2&gt;
+ }</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1200" size="200,200">　#廊下(メインメニュー)\
+{
+	(set:$mainmenu to 1)
+    (set:$itemmenu to 1)
+    (set:$savemenu to 1)}
 どこに向かおうか？&lt;bl&gt;
 &lt;ul&gt;
 &lt;li&gt;[[中央棟]]
@@ -111,9 +240,9 @@ a {
 &lt;li&gt;[[B棟]]
 &lt;li&gt;[[C棟]]
 &lt;li&gt;[[D棟]]
-&lt;/ul&gt;</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="725,1025" size="100,100">&lt;html&gt;
+&lt;/ul&gt;</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="900,1000" size="100,200">&lt;html&gt;
 &lt;body&gt;
-&lt;h1&gt;中央棟&lt;/h1&gt;
+　&lt;h1&gt;中央棟&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;[[広場-&gt;中央広場]]
 &lt;li&gt;[[1階-&gt;中央棟1階]]
@@ -123,9 +252,7 @@ a {
 &lt;/ul&gt;
 [[戻る-&gt;メインメニュー]]
 &lt;/body&gt;
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1075,1725" size="100,200">&lt;html&gt;
-&lt;body&gt;
-&lt;h1&gt;A棟&lt;/h1&gt;
+&lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1075,1725" size="100,200">#A棟
 &lt;ul&gt;
 &lt;li&gt;[[一階-&gt;A棟一階]]
 &lt;li&gt;[[二階-&gt;A棟2階]](if: $hintA2 is 1)[(研究補助員休憩室)]
@@ -133,8 +260,6 @@ a {
 &lt;li&gt;[[それ以上へ-&gt;A棟上部]]
 &lt;/ul&gt;
 [[戻る-&gt;メインメニュー]]
-&lt;/body&gt;
-&lt;/html&gt;
 </tw-passagedata><tw-passagedata pid="6" name="B棟" tags="" position="2425,2200" size="100,200">&lt;h1&gt;B棟&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;[[1階-&gt;B棟一階]](if: $hintB1 is 1)[(資料室)]
@@ -142,26 +267,29 @@ a {
 &lt;li&gt;[[3階-&gt;B棟3階]]
 &lt;li&gt;[[それ以上へ-&gt;B棟上部]]
 &lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="7" name="C棟" tags="" position="3450,1500" size="100,200">&lt;h1&gt;C棟&lt;/h1&gt;
+[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="7" name="C棟" tags="" position="3450,1500" size="100,200">　&lt;h1&gt;C棟&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;[[1階-&gt;C棟一階]](if: $hintC1 is 1)[(購買室)]
 &lt;li&gt;[[2階-&gt;C棟2階]]
 &lt;li&gt;[[3階-&gt;C棟3階]]
 &lt;li&gt;[[それ以上へ-&gt;C棟上部]]
 &lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="8" name="D棟" tags="" position="2650,375" size="100,100">&lt;h1&gt;D棟&lt;/h1&gt;
+[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="8" name="D棟" tags="" position="2650,375" size="100,100">　&lt;h1&gt;D棟&lt;/h1&gt;
 &lt;ul&gt;
 &lt;li&gt;[[1階-&gt;D棟一階]]
 &lt;li&gt;[[2階-&gt;D棟2階]](if: $hintD2 is 1)[(被検体安置室)]
+[[屋上-&gt;D棟上部]]
 &lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="675,1950" size="100,100">&lt;h2&gt;A棟1階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="700,2150" size="100,100">&lt;h2&gt;A棟2階&lt;/h2&gt;
-(if:$flagA2 &gt;= 1)[研究補助員用の休憩室にたどり着いた。
-中には河西がいた。「どうも！こんにちは、何か用事ですか？」
-
-(link:&quot;河西と話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]
-\
-(if:$flagA2 is 0)[A棟の二階を散策していると、一角に研究補助員用の休憩室を見つけた。
+[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="700,1700" size="100,100">　#A棟1階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="700,1825" size="100,100">　#A棟2階
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit is 1)[A棟の二階を散策していると、一角に研究補助員用の休憩室を見つけた。
 (click:?page)[
 ここに至るまでの道のりはひどく潔癖な様相をしていたが、この部屋は今での様子と打って変わって人のぬくもりが感じられる。例えば人数分のベッドだったり、カレンダーだったり、(colour:red)[中央棟一階の購買室]で購入したと思しき弁当が机の上に置かれていたりとかなり自由は確保されている事がわかる。それもそこそこ広く、どうやら5人くらいは寝泊りできそうだ。
 (click:?page)[
@@ -169,37 +297,118 @@ a {
 
 「始めまして！　話は聞いてますよ、新たに配属された研究補助員ですよね？　
 私は研究補助員の河西です。多分先輩……って事になるのかな？
-とにかく！　全く畏まることないから、いつでも話に来てくださいね！」
+とにかく！　全く畏まることないので、いつでも話に来てくださいね！」
 (click:?page)[
 彼女はにこやかな口調で声をかけてきた。どうやらこちらに敵意はないらしい、何か困りごとがあった時は彼女に声をかけて相談した方がいいかもしれない。
 
                          (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)
-(if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。](set:$hintC1=$hintC1+1)](if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)](set:$flagA2=$flagA2+1)
-(link:&quot;早速話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]]]]</tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="1175,2200" size="100,100">&lt;h2&gt;A棟3階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="950,2325" size="100,100">&lt;h2&gt;A棟上部&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">&lt;h2&gt;B棟1階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">自分用の休憩室にたどり着いた。
+(if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。](set:$hintC1=$hintC1+1)](if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)]
+(link:&quot;早速話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]]]]\
+&lt;!--恒常イベント--&gt;\
+(if:visit is 2)[研究補助員用の休憩室にたどり着いた。
+中には河西がいた。「あ、どうも！こんにちは、何か用事ですか？」
 
-(if:$hintmenu is 0)[初めて入る部屋ではあったが、確かにどこか安心感がある。
-(text-colour:red)[ベッド]があるため、もし疲労を感じたらここで休んでもいいだろう。&lt;bl&gt;&lt;/p&gt;
-&lt;p&gt;机を見ると、白地の手持ちノートが置かれていた。藍色のゴムバンドでまとめられており、印字のされていないボールペンが挟まっている。これになら、新たたに仕入れた情報を集められそうだ。&lt;/p&gt;&lt;br&gt;
-&lt;br&gt;
+(link:&quot;河西と話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]
+&lt;!--その他--&gt;
+</tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="700,1950" size="100,100">　#A棟3階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="12" name="A棟上部" tags="" position="700,2075" size="100,100">　#A棟上部
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="2225,2450" size="100,100">#B棟1階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="2350,2450" size="100,100">#B棟2階
+&lt;!--初回に入る時のイベント--&gt;
+(if:visit is 1)[アナウンスに従い、B棟2階にある自室の休憩室に行ってみた。
+	初めて入る部屋ではあったが、確かにどこか安心感がある。
+    (text-colour:red)[ベッド]があるため、もし疲労を感じたらここで休んでもいいだろう。
+    (click:?page)[
+机を見ると、白地の手持ちノートが置かれていた。藍色のゴムバンドでまとめられており、印字のされていないボールペンが挟まっている。これになら手に入れた情報を集められそうだ。
+(click:?page)[
 (text-colour:yellow)[研究員用手帳]を手に入れた。
-(text-colour:green)[ヒントメニュー]が解放された。&lt;br&gt;次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。(set:$hintmenu to 1))&lt;br&gt;
+(text-colour:green)[ヒントメニュー]が解放された。
+(次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。)(set:$hintmenu to 1)
+(text-colour:green)[用語集]が解放された。
+(今までに手に入れた情報を整理する事ができる。メインメニューに戻って確認しよう。)(set:$libmenu to 1)
 (text-colour:yellow)[研究員用携帯端末]を手に入れた。
-(text-colour:green)[電話]が解放された。&lt;br&gt;知り合いでさえあればお互いの電話番号を登録できる。コミュニケーションシップを行うため積極的に活用しよう。(set:$commmenu to 1))]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2525,2450" size="100,100">&lt;h2&gt;B棟3階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2650,2450" size="100,100">&lt;h2&gt;B棟上部&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="17" name="C棟一階" tags="" position="3475,1725" size="100,100">&lt;h2&gt;C棟1階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="18" name="C棟2階" tags="" position="3600,1725" size="100,100">&lt;h2&gt;C棟2階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="19" name="C棟3階" tags="" position="3725,1700" size="100,100">&lt;h2&gt;C棟3階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="20" name="C棟上部" tags="" position="3675,1550" size="100,100">&lt;h2&gt;C棟上部&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="21" name="D棟一階" tags="" position="2975,225" size="100,100">&lt;h2&gt;D棟1階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="2900,475" size="100,100">&lt;h2&gt;D棟2階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="375,1250" size="100,100">&lt;h2&gt;中央棟1階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="525,1225" size="100,100">&lt;h2&gt;中央棟2階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="925,1150" size="100,100">&lt;h2&gt;中央棟3階&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="875,1300" size="100,100">&lt;h2&gt;中央棟上部&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,950" size="100,100">
+(text-colour:green)[電話]が解放された。(知り合いでさえあればお互いの電話番号を登録できる。コミュニケーションシップを行うため積極的に活用しよう。)(set:$commmenu to 1)]]]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[自分用の休憩室にたどり着いた。
+[[ベッドで眠る]]]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2525,2450" size="100,100">#B棟3階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2650,2450" size="100,100">　#B棟上部
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="17" name="C棟一階" tags="" position="3400,1800" size="100,100">　&lt;h2&gt;C棟1階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="18" name="C棟2階" tags="" position="3525,1800" size="100,100">　&lt;h2&gt;C棟2階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="19" name="C棟3階" tags="" position="3650,1800" size="100,100">　&lt;h2&gt;C棟3階&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="20" name="C棟上部" tags="" position="3775,1800" size="100,100">　&lt;h2&gt;C棟上部&lt;/h2&gt;
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="21" name="D棟一階" tags="" position="2800,250" size="100,100">　#D棟1階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="2800,375" size="100,100">　#D棟2階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="500,1025" size="100,100">　#中央棟1階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="24" name="中央棟2階" tags="" position="500,1150" size="100,100">　#中央棟2階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="25" name="中央棟3階" tags="" position="500,1275" size="100,100">　#中央棟3階
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="26" name="中央棟上部" tags="" position="500,1400" size="100,100">　#中央棟上部
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2000,950" size="100,100">
 ………………………………
 &lt;div align=&quot;right&quot;&gt;
 (current-date:)
@@ -217,19 +426,24 @@ a {
 
 また、この誓約書にサインをせず、機関研究員としての雇用要請を辞退したとみなし、レベル3以上の記憶除去装置を用いて当イベントを忘却します。
 
-
+(b4r:&quot;solid&quot;)[\
 [[サインする-&gt;メインアナウンス1 初めて来た人向け (変数ライブラリ)]]
-(link: &quot;サインしない&quot;)[(display:&quot;end1　除名完了&quot;)]</tw-passagedata><tw-passagedata pid="29" name="中央広場" tags="" position="725,1300" size="100,100">&lt;h2&gt;中央広場&lt;/h2&gt;
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。</tw-passagedata><tw-passagedata pid="30" name="サイドバー　試験的" tags="footer" position="1025,725" size="200,200">(append: ?SideBar)[\
-	(if:$mainmenu is not 0)[[メインメニュー]]
+(link: &quot;サインしない&quot;)[(show:?del)]]
+|del)[(display:&quot;end1　除名完了&quot;)]</tw-passagedata><tw-passagedata pid="29" name="中央広場" tags="" position="500,900" size="100,100">　#中央広場
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="30" name="サイドバー" tags="footer" position="1025,725" size="200,200">{(set:$sidemenu to [(if:$mainmenu is not 0)[[メインメニュー]]
     (if:$hintmenu is not 0)[[ヒントメニュー]]
     (if:$itemmenu is not 0)[[アイテム]]
     (if:$commmenu is not 0)[[電話]]
     (if:$libmenu is not 0)[[用語集]]
-    (if:$savemenu is not 0)[(link:&quot;記録/読込&quot;)[(b4r:&quot;dotted&quot;)[(display:&quot;記録/読込&quot;)]]]
-    (if:$savemenu and $mainmenu is 0)[(if: (saved-games: ) contains &quot;Slot&quot;)[
-  (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
-]]
+    ])}
+(append:?sidebar)[\
+	$sidemenu
 ]
 &lt;!--タグ付けでfooterに設定する事出反映される。このタグは重要--&gt;</tw-passagedata><tw-passagedata pid="31" name="ヒントメニュー" tags="ヒント" position="1000,475" size="100,100">A棟二階はどうやら(colour:red)[研究補助員用の休憩室]があったはずである。そこに行って何か話を聞いてもいいかもしれない。
 B棟一階には(colour:red)[資料室]があるはずだ。資料があればそこにたむろしている職員もあるだろうし、人手を欲しているはずだ。
@@ -237,8 +451,8 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 
 (if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=$hintA2+1)]
 (if:$hintB1 is 0)[(colour:yellow)[B棟1階が判明した。](set:$hintB1=$hintB1+1)]
-(if:$hintD2 is 0)[(colour:yellow)[D棟2階の用途が判明した。](set:$hintD2=$hintD2+1)]</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="700,250" size="100,100">今はまだ誰とも知り合いではない。
-[[河西研究補助員]]</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="675,375" size="100,100">&lt;h1&gt;アイテムメニュー&lt;/h1&gt;
+(if:$hintD2 is 0)[(colour:yellow)[D棟2階の用途が判明した。](set:$hintD2=$hintD2+1)]</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="725,225" size="100,100">今はまだ誰とも知り合いではない。
+[[河西研究補助員]]</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1075,350" size="100,100">&lt;h1&gt;アイテムメニュー&lt;/h1&gt;
 &lt;!--
 (if:コマンド is not)[[アイテム名]
 |開く&gt;[(link-rerun:&quot;詳細&quot;)[(show:?開く)(hide:?閉じる)]]\
@@ -267,9 +481,9 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 (hidden:)[説明文]&lt;&quot;タイトル&quot;
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
-研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="header" position="100,0" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="用語集" tags="" position="450,700" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;
-&lt;!--(prepend:newline)[]--&gt;
-(set:_unkhown to &quot;??????&quot;)
+研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="Untitled Passage" tags="header" position="100,0" size="100,100"></tw-passagedata><tw-passagedata pid="36" name="用語集" tags="" position="450,700" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;\
+&lt;!--(prepend:newline)[]--&gt;\
+(set:_unkhown to &quot;??????&quot;)\
 &lt;h1&gt;用語集&lt;/h1&gt;
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※あなたは第四級研究補助員であるため、いくつかの情報へのアクセスが禁止されています。]
 &lt;h3&gt;機関について&lt;/h3&gt;\
@@ -280,7 +494,7 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 当機関は世界各地に支部を有しており、南極、月面、■■支部を含め現在■■■■程度の支部を有しています。
 ]
 &lt;h3&gt;関連人物&lt;/h3&gt;
-&lt;h3&gt;怪異&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="37" name="記録/読込" tags="" position="750,750" size="100,100">{(link:&quot;記録&quot;)[
+&lt;h3&gt;事象&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="37" name="記録/読込" tags="" position="750,750" size="100,100">{(link:&quot;記録&quot;)[
   (if:(save-game:&quot;Slot&quot;))[
     記録処理が完了しました。
   ](else: )[
@@ -289,7 +503,35 @@ D棟二階の(colour:red)[被検体安置室]はどうやら人手が足りて�
 ]}
 {(if: (saved-games: ) contains &quot;Slot&quot;)[
   (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
-]}</tw-passagedata><tw-passagedata pid="38" name="河西研究補助員" tags="" position="1100,225" size="100,100">テストです！</tw-passagedata></tw-storydata>
+]}</tw-passagedata><tw-passagedata pid="38" name="河西研究補助員" tags="" position="1100,225" size="100,100">#河西研究補助員
+「テストです！　もう少し待っていてくださいね」</tw-passagedata><tw-passagedata pid="39" name="D棟上部" tags="" position="2800,500" size="100,100">　#D棟上部
+ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--初回に入る時のイベント--&gt;\
+(if:visit = 1)[]\
+&lt;!--恒常イベント--&gt;\
+(if:visit &gt;= 2)[]\
+&lt;!--その他--&gt;
+(if:)[]</tw-passagedata><tw-passagedata pid="40" name="ハンバーガーメニュー用1" tags="footer" position="200,0" size="100,100">&lt;div class=&quot;hamburger-menu&quot;&gt;\
+        &lt;input type=&quot;checkbox&quot; id=&quot;menu-btn-check&quot;&gt;\
+        &lt;label for=&quot;menu-btn-check&quot; class=&quot;menu-btn&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;\
+      &lt;div class=&quot;menu-content&quot;&gt;\
+      &lt;style&gt;
+      	body{
+        	color:white;
+            text-size:large;
+            text-align:center;}
+        &lt;/style&gt;
+      &lt;!--サイドバーの中身と同じ--&gt; 
+	(link-style:(color:white))[\
+    (link-undo:&quot;戻る&quot;)
+    (link:&quot;取り消す&quot;)[(forget-undos:-1)]
+    
+    (css:
+&quot;line-height:2.5&quot;)[\
+    	$sidemenu]]\
+        &lt;/div&gt;\
+    &lt;/div&gt;\
+    </tw-passagedata><tw-passagedata pid="41" name="Untitled Passage 1" tags="header" position="300,0" size="100,100"></tw-passagedata><tw-passagedata pid="42" name="ベッドで眠る" tags="" position="2450,2575" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
