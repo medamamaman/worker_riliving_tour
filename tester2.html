@@ -190,7 +190,9 @@ tw-icon {
     display:none;
   }
 }
-/*ハンバーガーメニューの区切り線*/</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="orange"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2300,1100" size="100,100">…………
+/*ハンバーガーメニューの区切り線*/</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="システム" color="none"></tw-tag><tw-tag name="body" color="orange"></tw-tag><tw-tag name="header" color="orange"></tw-tag><tw-tag name="&lt;footer&gt;" color="none"></tw-tag><tw-tag name="&lt;foot&gt;" color="red"></tw-tag><tw-tag name="&lt;hooter&gt;" color="none"></tw-tag><tw-tag name="footer" color="orange"></tw-tag><tw-passagedata pid="1" name="メインアナウンス1 初めて来た人向け (変数ライブラリ)" tags="" position="2200,1575" size="100,100">&lt;!--戻るコマンド設置用--&gt;\
+(set:$undo to 1)\
+…………
 『誓約書が受理されたため、貴方は正式に第四級研究員としての雇用が決定いたしました。』
 『それでは、今後は当機関の研究員としての業務に励んでいただきます。』
 
@@ -219,7 +221,9 @@ tw-icon {
 『それでは、これにて新人研究員用アナウンスメントを終了いたします。』
 
 
-[[業務を開始する。-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2300,900" size="100,100">{
+[[業務を開始する。-&gt;メインメニュー]]\
+{(set:$youinfo to 1)
+(set:$hintB2 to 1)}</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2300,1200" size="100,100">{
 &lt;head&gt;
 &lt;style&gt;
 a {
@@ -233,9 +237,11 @@ a {
  &lt;div align=&quot;center&quot;&gt;
  &quot;[END1 契約破棄]&quot;
  &lt;/div&gt;
- }</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1200" size="200,200">　#廊下(メインメニュー)\
+ }
+ (after:time + 1.5s)[(open-url:&quot;https://www.google.co.jp/&quot;)]</tw-passagedata><tw-passagedata pid="3" name="メインメニュー" tags="" position="1975,1700" size="200,200">#廊下(メインメニュー)\
 {
 	(set:$mainmenu to 1)
+    (set:$hintmenu to 1)
     (set:$itemmenu to 1)
     (set:$savemenu to 1)}
 どこに向かおうか？&lt;bl&gt;
@@ -245,54 +251,57 @@ a {
 &lt;li&gt;[[B棟]]
 &lt;li&gt;[[C棟]]
 &lt;li&gt;[[D棟]]
-&lt;/ul&gt;</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="875,1725" size="100,200">&lt;html&gt;
-&lt;body&gt;
-　&lt;h1&gt;中央棟&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;[[広場-&gt;中央広場]]
-&lt;li&gt;[[1階-&gt;中央棟1階]]
-&lt;li&gt;[[2階-&gt;中央棟2階]]
-&lt;li&gt;[[3階-&gt;中央棟3階]]
-&lt;li&gt;[[それ以上へ-&gt;中央棟上部]]
 &lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]
-&lt;/body&gt;
-&lt;/html&gt;</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1275,2250" size="100,200">#A棟
-&lt;ul&gt;
-&lt;li&gt;[[一階-&gt;A棟一階]]
-&lt;li&gt;[[二階-&gt;A棟2階]](if: $hintA2 is 1)[(研究補助員休憩室)]
-&lt;li&gt;[[三階-&gt;A棟3階]]
-&lt;li&gt;[[それ以上へ-&gt;A棟上部]]
-&lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]
-</tw-passagedata><tw-passagedata pid="6" name="B棟" tags="" position="1925,2300" size="100,200">&lt;h1&gt;B棟&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;[[1階-&gt;B棟一階]](if: $hintB1 is 1)[(資料室)]
-&lt;li&gt;[[2階-&gt;B棟2階]][(休憩室)]
-&lt;li&gt;[[3階-&gt;B棟3階]]
-&lt;li&gt;[[それ以上へ-&gt;B棟上部]]
-&lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="7" name="C棟" tags="" position="2800,2175" size="100,200">　&lt;h1&gt;C棟&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;[[1階-&gt;C棟一階]](if: $hintC1 is 1)[(購買室)]
-&lt;li&gt;[[2階-&gt;C棟2階]]
-&lt;li&gt;[[3階-&gt;C棟3階]]
-&lt;li&gt;[[それ以上へ-&gt;C棟上部]]
-&lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="8" name="D棟" tags="" position="3225,1675" size="100,200">　&lt;h1&gt;D棟&lt;/h1&gt;
-&lt;ul&gt;
-&lt;li&gt;[[1階-&gt;D棟一階]]
-&lt;li&gt;[[2階-&gt;D棟2階]](if: $hintD2 is 1)[(被検体安置室)]
-[[屋上-&gt;D棟上部]]
-&lt;/ul&gt;
-[[戻る-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="900,2250" size="100,100">　#A棟1階
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 1)</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="875,1700" size="100,200">#中央棟
+---
+* [[広場-&gt;中央広場]]
+* [[1階-&gt;中央棟1階（購買室）]](if: $hintCe1 &gt;= 1)[(購買室)]
+* [[2階-&gt;中央棟2階]]
+* [[3階-&gt;中央棟3階]]
+* [[それ以上へ-&gt;中央棟上部]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1400,2150" size="100,200">#A棟
+---
+* [[一階-&gt;A棟一階]]
+* [[二階-&gt;A棟2階(研究補助員用休憩室)]](if: $hintA2 &gt;= 1)[(研究補助員休憩室)]
+* [[三階-&gt;A棟3階]]
+* [[それ以上へ-&gt;A棟上部]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="6" name="B棟" tags="" position="1900,2300" size="100,200">#B棟
+---
+* [[1階-&gt;B棟一階(資料室)]](if: $hintB1 &gt;= 1)[(資料室)]
+* [[2階-&gt;B棟2階(休憩室)]](if: $hintB2 &gt;= 1)[(休憩室)]
+* [[3階-&gt;B棟3階]]
+* [[それ以上へ-&gt;B棟上部]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="7" name="C棟" tags="" position="2800,2175" size="100,200">#C棟
+---
+* [[1階-&gt;C棟一階]]
+* [[2階-&gt;C棟2階]]
+* [[3階-&gt;C棟3階]]
+* [[それ以上へ-&gt;C棟上部]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="8" name="D棟" tags="" position="3225,1675" size="100,200">#D棟
+---
+* [[1階-&gt;D棟一階]]
+* [[2階-&gt;D棟2階(被検体安置室)]](if: $hintD2 &gt;= 1)[(被検体安置室)]
+* [[屋上-&gt;D棟上部]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="9" name="A棟一階" tags="" position="900,2250" size="100,100">　#A棟1階
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
 (if:visit = 1)[]\
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="10" name="A棟2階" tags="" position="900,2375" size="100,100">　#A棟2階
+(if:)[]</tw-passagedata><tw-passagedata pid="10" name="A棟2階(研究補助員用休憩室)" tags="" position="900,2375" size="100,100">　#A棟2階
  &lt;!--恒常イベント--&gt;\
 (if:visit is 2)[研究補助員用の休憩室にたどり着いた。
 中には河西がいた。「あ、どうも！　こんにちは、何か用事ですか？」
@@ -300,28 +309,23 @@ a {
 (link:&quot;河西と話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]
 &lt;!--初回イベント--&gt;\
 (if:visit is 1)[A棟の二階を散策していると、一角に研究補助員用の休憩室を見つけた。
-(click:?page)[
+
 	ここに至るまでの道のりはひどく潔癖な様相をしていたが、この部屋は今での様子と打って変わって人のぬくもりが感じられる。例えば人数分のベッドだったり、カレンダーだったり、(colour:red)[中央棟一階の購買室]で購入したと思しき弁当が机の上に置かれていたりとかなり自由は確保されている事がわかる。それもそこそこ広く、どうやら5人くらいは寝泊りできそうだ。
-    (click:?page)[
+ 
     	部屋の中には一人の女性がいた。彼女はせわしなく資料を整理していたが、こちらを見るとにこやかに挨拶をしてきた。
         
         「始めまして！　話は聞いてますよ、新たに配属された研究補助員ですよね？　
         私は研究補助員の河西です。多分先輩……って事になるのかな？
         とにかく！　全く畏まることないので、いつでも話に来てくださいね！」
-        (click:?page)[
+
         	彼女はにこやかな口調で声をかけてきた。どうやらこちらに敵意はないらしい、何か困りごとがあった時は彼女に声をかけて相談した方がいいかもしれない。
             &lt;!--システム情報--&gt;
             (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)
-            (if:$hintC1 is 0)[(colour:yellow)[購買室の位置がわかった。]
-            (set:$hintC1=$hintC1+1)](if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。]
-            (set:$hintA2=$hintA2+1)]
+            (if:$hintCe1 is 0)[(colour:yellow)[購買室の位置がわかった。] (set:$hintCe1=it+2)]
+            (if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=it+2)]
             &lt;!--訪れフラグ管理--&gt;\
             (set:$visitA2 to 1)\
            (link:&quot;早速話をする&quot;)[(go-to:&quot;河西研究補助員&quot;)]]
-       ]\
-    ]\
-  ]\
-\
 &lt;!--その他--&gt;\
 </tw-passagedata><tw-passagedata pid="11" name="A棟3階" tags="" position="900,2500" size="100,100">　#A棟3階
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
@@ -337,47 +341,45 @@ a {
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="13" name="B棟一階" tags="" position="1725,2550" size="100,100">#B棟1階
+(if:)[]</tw-passagedata><tw-passagedata pid="13" name="B棟一階(資料室)" tags="" position="1700,2600" size="100,100">#B棟1階
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
 (if:visit = 1)[]\
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
-&lt;!--その他--&gt;</tw-passagedata><tw-passagedata pid="14" name="B棟2階" tags="" position="1850,2550" size="100,100">#B棟2階
+&lt;!--その他--&gt;</tw-passagedata><tw-passagedata pid="14" name="B棟2階(休憩室)" tags="" position="1825,2600" size="100,100">#B棟2階
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[自分用の休憩室にたどり着いた。
 [[ベッドで眠る]]]
-&lt;!--初回イベント--&gt;
+&lt;!--初回イベント--&gt;\
 (if:visit is 1)[アナウンスに従い、B棟2階にある自室の休憩室に行ってみた。
 	初めて入る部屋ではあったが、確かにどこか安心感がある。
     (text-colour:red)[ベッド]があるため、もし疲労を感じたらここで休んでもいいだろう。
     
 	机を見ると、白地の手持ちノートが置かれていた。藍色のゴムバンドでまとめられており、印字のされていないボールペンが挟まっている。これになら手に入れた情報を集められそうだ。
     
+    ---
     	(text-colour:yellow)[研究員用手帳]を手に入れた。
-        (text-colour:green)[ヒントメニュー]が解放された。
-        (次に何をするべきかを常に書留めることができる。メインメニューに戻って確認しよう。)(set:$hintmenu to 1)
-        
         (text-colour:green)[用語集]が解放された。
-        (今までに手に入れた情報を整理する事ができる。メインメニューに戻って確認しよう。)(set:$libmenu to 1)
+        (今までに手に入れた情報を整理する事ができる。メインメニューに戻って確認しよう。)(set:$libmenu to 1)(set:$hintmenu to 2)
         
         (text-colour:yellow)[研究員用携帯端末]を手に入れた。
         (text-colour:green)[電話]が解放された。(知り合いでさえあればお互いの電話番号を登録できる。コミュニケーションシップを行うため積極的に活用しよう。
         (set:$commmenu to 1)\
-&lt;!--訪れフラグ管理--&gt;\
-(set:$visitB2 to 1)\
-]\
-{(set:$hintA2 to 1)
-(set:$hintB1 to 1)
-(set:$hintD2 to 1)
-}</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2025,2550" size="100,100">#B棟3階
+&lt;!--訪れフラグ、ヒントフラグ管理--&gt;\
+(set:$visitB2 to 1)(set:$hintB2 to 2))\
+&lt;!--次のヒントフラグ設置--&gt;
+{(if:$hintA2 is 0)[(set:$hintA2 to 1)]
+(if:$hintB1 is 0)[(set:$hintB1 to 1)]
+(if:$hintD2 is 0)[(set:$hintD2 to 1)]
+}]</tw-passagedata><tw-passagedata pid="15" name="B棟3階" tags="" position="2000,2600" size="100,100">#B棟3階
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
 (if:visit = 1)[]\
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2150,2550" size="100,100">　#B棟上部
+(if:)[]</tw-passagedata><tw-passagedata pid="16" name="B棟上部" tags="" position="2125,2600" size="100,100">　#B棟上部
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
 (if:visit = 1)[\
@@ -397,22 +399,42 @@ a {
 (if:visit=1)[]\
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
-&lt;!--その他--&gt;</tw-passagedata><tw-passagedata pid="22" name="D棟2階" tags="" position="3400,1750" size="100,100">　#D棟2階
-ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
+&lt;!--その他--&gt;</tw-passagedata><tw-passagedata pid="22" name="D棟2階(被検体安置室)" tags="" position="3400,1725" size="100,100">　#D棟2階
 &lt;!--恒常イベント--&gt;\
-(if:visit &gt;= 2)[]\
+(if:visit &gt;= 2)[\
+]
 &lt;!--初回に入る時のイベント--&gt;\
-(if:visit = 1)[D棟の2階にたどり着いた。
+(if:visit is 1)[\
+D棟の2階にたどり着いた。
 ここは他の棟と違い、少し薄暗く手入れもされていないようだった。蛍光灯は点滅しているし、こころなしか生臭く、鼻の奥の粘液が刺激されるような感覚に陥る。
 
 しばらく歩いていると、「第二被検体安置室」と打たれた扉が開いているのに気が付いた。
 中を確認してみるとコンクリート打ちになっており、強いアルコールの刺激臭が溜まっている。
-部屋の奥には、廊下の光が照らされて、]\
-&lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="23" name="中央棟1階" tags="" position="475,1750" size="100,100">　#中央棟1階
+部屋の奥には、廊下の光が照らされてその様子が露になったガラス槽があった。
+
+その中には何かが浮かんでいるように見えたので、中に何が浮かんでいるかを見ようとしたちょうどその時、肩に誰かの手が触れる感触がした。
+
+「なにか用事かな」
+
+背後に立っていたのは、柔和な笑みを浮かべたままこちらを見下ろしている一人の男性であった。
+だいぶお年を召しているのか頬には深い皺が走っており非力そうな印象を与えるが、彼の体の厚みから、決して貧弱な老爺とは言えなかった。彼は上からこちらを見てはゆっくりと言葉を紡いでいく。
+
+「まあ、とにかく中に入るといい。立ち話もなんだからね」
+  &lt;!--システム情報--&gt;
+(colour:yellow)[安置室の管理人と知り合いになった。](set:$Owner01=1)
+            &lt;!--訪れフラグ管理--&gt;\
+            (set:$visitD2 to 1)\
+(link:&quot;早速話をする&quot;)[(go-to:&quot;安置室の管理人&quot;)]
+]\
+&lt;!--その他--&gt;\
+(if: $a is 1)[　]</tw-passagedata><tw-passagedata pid="23" name="中央棟1階（購買室）" tags="" position="475,1750" size="100,100">　#中央棟1階
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
-(if:visit = 1)[]\
+(if:visit = 1)[全ての棟の中心に存在する]中央棟の一角には、どうやら購買室があるらしい。多くの食べ物であったり、実験に用いられるのだろうか、いくつかの器具なども売られている。実験に関しては機関が負担するのではないのだろうか……？
+
+よく見ると、値札のところには「エン」の記載がされておらず、見た事のない記載がされている。どうやら日本円は通用しないのだと考えていいだろう。
+
+[[買い物をする-&gt;購買]]
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
@@ -437,13 +459,22 @@ a {
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="" position="0,0" size="100,100">(click:?page)</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2300,1000" size="100,100">
+(if:)[]</tw-passagedata><tw-passagedata pid="27" name="マクロ表" tags="header" position="25,0" size="100,100">&lt;!--「開閉可能なポップアップ」
+(if:「表示条件」)[
+	|「選択肢閉状態」&gt;[(link-rerun:&quot;「選択肢名」&quot;)\
+    	[(show:?「選択肢開状態」)(hide:「選択肢閉状態」)]]\
+	|「選択肢開状態」)[「開かれた選択肢」
+    	(link-rerun:&quot;閉じる&quot;)[(hide:「選択肢開状態」)(show:「選択肢閉状態」)]
+	]
+]
+--&gt;</tw-passagedata><tw-passagedata pid="28" name="冒頭" tags="" position="2250,1400" size="100,100">&lt;!--戻るコマンド設置用--&gt;\
+(set:$undo to 1)\
 ………………………………
 &lt;div align=&quot;right&quot;&gt;
-(current-date:)
+(current-date:)\
 &lt;/div&gt;
 &lt;div align=&quot;center&quot;&gt;
-&lt;h1&gt;誓約書&lt;/h1&gt;
+#誓約書
 &lt;/div&gt;
 この度、わたしは当機関に第四級職員及び第四級研究補助員として雇用されるにあたり、下記の事項を遵守する事を誓約いたします。
 &lt;ol&gt;
@@ -465,22 +496,36 @@ a {
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="30" name="サイドバー" tags="footer" position="1425,1200" size="200,200">(set:$sidemenu to [\
+(if:)[]</tw-passagedata><tw-passagedata pid="30" name="サイドバー" tags="footer" position="1750,1525" size="200,200">(set:$sidemenu to [\
 	(if:$mainmenu is not 0)[&lt;hr&gt;[[メインメニュー]]]\
     (if:$hintmenu is not 0)[&lt;hr&gt;[[ヒントメニュー]]]\
     (if:$itemmenu is not 0)[&lt;hr&gt;[[アイテム]]]\
     (if:$commmenu is not 0)[&lt;hr&gt;[[電話]]]\
-    (if:$libmenu is not 0)[&lt;hr&gt;[[用語集]]]])\
+    (if:$libmenu is not 0)[&lt;hr&gt;[[用語集]]]\
+    (if:$savemenu is not 0)[&lt;hr&gt;[(link:&quot;記録/読込&quot;)[{(link:&quot;記録&quot;)[
+  (if:(save-game:&quot;Slot&quot;))[
+    記録処理が完了しました。
+  ](else: )[
+    記録処理が完了しませんでした。通信環境等を整えて再度記録処理を行ってください。.
+  ]
+]}
+{(if: (saved-games: ) contains &quot;Slot&quot;)[
+  (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
+]}]]]])\
 	[\
     	(append:?sidebar)[
        [$sidemenu]]]\
 	\
-&lt;!--タグ付けでfooterに設定する事出反映される。このタグは重要--&gt;</tw-passagedata><tw-passagedata pid="31" name="ヒントメニュー" tags="ヒント" position="1600,900" size="100,100">#ヒントメニュー
-&lt;!--部屋解禁ヒント--&gt;
+&lt;!--タグ付けでfooterに設定する事出反映される。このタグは重要--&gt;</tw-passagedata><tw-passagedata pid="31" name="ヒントメニュー" tags="ヒント" position="1975,1125" size="100,200">
+#ヒントメニュー
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※このメニューを開くと次にどこへ向かえばいいかがわかります。]
+---
+&lt;!--部屋解禁ヒント--&gt;\
 	&lt;!--中央棟--&gt;\
-{(if:$visitCeP is not 1 and $hintCeP &gt;= 1)[&lt;br&gt;](else:)[]
-(if:$visitCe1 is not 1 and $hintCe1 &gt;= 1)[&lt;br&gt;](else:)[]
-(if:$visitCe2 is not 1 and $hintCe2 &gt;= 1)[&lt;br&gt;](else:)[]
+{\
+(if:$visitCeP is not 1 and $hintCeP &gt;= 1)[&lt;br&gt;](else:)[]
+(if:$visitCe1 is not 1 and $hintCe1 &gt;= 1)[中央棟の一階には(text-colour:red)[購買]があるらしい。何か買いたくなったらここを利用する事にしよう。&lt;br&gt;](else:)[]
+(if:$visitCe2 is not  1 and $hintCe2 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitCe3 is not 1 and $hintCe3 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitCeU is not 1 and $hintCeU &gt;= 1)[&lt;br&gt;](else:)[]
 	&lt;!--A棟--&gt;\
@@ -490,100 +535,128 @@ a {
 (if:$visitAU is not 1 and $hintAU &gt;= 1)[&lt;br&gt;](else:)[]
 	&lt;!--B棟--&gt;\
 (if:$visitB1 is not 1 and $hintB1 &gt;= 1)[B棟1階には(colour:red)[資料室]があるはずだ。資料があればそこにたむろしている職員もあるだろうし、人手を欲しているはずだ。&lt;br&gt;](else:)[]
-(if:$visitB2 is not 1 and $hintB2 &gt;= 1)[&lt;br&gt;](else:)[]
+(if:$visitB2 is not 1 and $hintB2 &gt;= 1)[アナウンスの指示に拠ると、どうやら(colour:red)[B棟二階]に我々の休憩室があるらしい。ひとまずここに行ってみよう。&lt;br&gt;](else:)[]
+(if:$visitB3 is not 1 and $hintB3 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitB3 is not 1 and $hintB3 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitBU is not 1 and $hintBU &gt;= 1)[&lt;br&gt;](else:)[]
 	&lt;!--C棟--&gt;\
 (if:$visitC1 is not 1 and $hintC1 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitC2 is not 1 and $hintC2 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitC3 is not 1 and $hintC3 &gt;= 1)[&lt;br&gt;](else:)[]
-(if:$visitCU is not 1 and $hintCU &gt;= 1)[&lt;br&gt;](else:)[]
+(if:$visitCU is not  1 and $hintCU &gt;= 1)[&lt;br&gt;](else:)[]
 	&lt;!--D棟--&gt;\
 (if:$visitD1 is not 1 and $hintD1 &gt;= 1)[&lt;br&gt;](else:)[]
 (if:$visitD2 is not 1 and $hintD2 &gt;= 1)[D棟2階の(colour:red)[被検体安置室]はどうやら人手が足りていないらしい。死体に触れるのは気が引けるが、とはいえ手助けはしてあげたい。&lt;br&gt;](else:)[]
 (if:$visitDU is not 1 and $hintDU &gt;= 1)[&lt;br&gt;](else:)[]
 }
-&lt;!--システムコード--&gt;
-	&lt;!--中央棟--&gt;\
+&lt;!--人物フラグ管理--&gt;\
+(if:$hintWorker is  1)[どうやら河西研究補助員はある研究者の専属補助員のようだ。眼鏡をかけて頬に瑕の入った男性らしいが、何か手伝えることはあるだろうか？&lt;br&gt;](else:)[]
+&lt;!--システムコード--&gt;\
+	&lt;!--部屋判明コード--&gt;\
+		&lt;!--中央棟--&gt;\
 {(if:$hintCeP is 1)[(colour:yellow)[中央広場が判明した。](set:$hintCeP=it+1)&lt;br&gt;](else:)[]
-(if:$hintC1 is 1)[(colour:yellow)[中央棟1階が判明した。](set:$hintCe1=it+1)&lt;br&gt;](else:)[]
-(if:$hintC2 is 1)[(colour:yellow)[中央棟2階が判明した。](set:$hintCe2=it+1)&lt;br&gt;](else:)[]
-(if:$hintC3 is 1)[(colour:yellow)[中央棟3階が判明した。](set:$hintCe3=it+1)&lt;br&gt;](else:)[]
-(if:$hintCU is 1)[(colour:yellow)[中央棟上部が判明した。](set:$hintCeU=it+1)&lt;br&gt;](else:)[]
-	&lt;!--A棟--&gt;\
+(if:$hintCe1 is 1)[(colour:yellow)[中央棟1階が判明した。](set:$hintCe1=it+1)&lt;br&gt;](else:)[]
+(if:$hintCe2 is 1)[(colour:yellow)[中央棟2階が判明した。](set:$hintCe2=it+1)&lt;br&gt;](else:)[]
+(if:$hintCe3 is 1)[(colour:yellow)[中央棟3階が判明した。](set:$hintCe3=it+1)&lt;br&gt;](else:)[]
+(if:$hintCeU is 1)[(colour:yellow)[中央棟上部が判明した。](set:$hintCeU=it+1)&lt;br&gt;](else:)[]
+		&lt;!--A棟--&gt;\
 (if:$hintA1 is 1)[(colour:yellow)[A棟1階が判明した。](set:$hintA1=it+1)&lt;br&gt;](else:)[]
 (if:$hintA2 is 1)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=it+1)&lt;br&gt;](else:)[]
 (if:$hintA3 is 1)[(colour:yellow)[A棟3階が判明した。](set:$hintA3=it+1)&lt;br&gt;](else:)[]
 (if:$hintAU is 1)[(colour:yellow)[A棟上部が判明した。](set:$hintAU=it+1)&lt;br&gt;](else:)[]
-	&lt;!--B棟--&gt;\
+		&lt;!--B棟--&gt;\
 (if:$hintB1 is 1)[(colour:yellow)[B棟1階が判明した。](set:$hintB1=it+1)&lt;br&gt;](else:)[]
 (if:$hintB2 is 1)[(colour:yellow)[B棟2階が判明した。](set:$hintB2=it+1)&lt;br&gt;](else:)[]
 (if:$hintB3 is 1)[(colour:yellow)[B棟3階が判明した。](set:$hintB3=it+1)&lt;br&gt;](else:)[]
 (if:$hintBU is 1)[(colour:yellow)[B棟上部が判明した。](set:$hintBU=it+1)&lt;br&gt;](else:)[]
-	&lt;!--C棟--&gt;\
+		&lt;!--C棟--&gt;\
 (if:$hintC1 is 1)[(colour:yellow)[C棟1階が判明した。](set:$hintC1=it+1)&lt;br&gt;](else:)[]
 (if:$hintC2 is 1)[(colour:yellow)[C棟2階が判明した。](set:$hintC2=it+1)&lt;br&gt;](else:)[]
 (if:$hintC3 is 1)[(colour:yellow)[C棟3階が判明した。](set:$hintC3=it+1)&lt;br&gt;](else:)[]
 (if:$hintCU is 1)[(colour:yellow)[C棟上部が判明した。](set:$hintCU=it+1)&lt;br&gt;](else:)[]
-	&lt;!--D棟--&gt;\
+		&lt;!--D棟--&gt;\
 (if:$hintD1 is 1)[(colour:yellow)[D棟1階が判明した。](set:$hintD1=it+1)&lt;br&gt;](else:)[]
 (if:$hintD2 is 1)[(colour:yellow)[D棟2階が判明した。](set:$hintD2=it+1)&lt;br&gt;](else:)[]
 (if:$hintDU is 1)[(colour:yellow)[D棟上部が判明した。](set:$hintDU=it+1)&lt;br&gt;](else:)[]
-}</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1275,925" size="100,100">今はまだ誰とも知り合いではない。
-(if:$KaWa01 = 1)[[河西研究補助員]]</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1425,1050" size="100,100">&lt;h1&gt;アイテムメニュー&lt;/h1&gt;
-&lt;!--
-(if:コマンド is not)[[アイテム名]
-|開く&gt;[(link-rerun:&quot;詳細&quot;)[(show:?開く)(hide:?閉じる)]]\
-|開く)[詳細。
-(使い方)(link-rerun:&quot;閉じる&quot;)[(hide:?開く)(show:?閉じる)]
-]]
+}\
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)\</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1425,1050" size="100,200">#電話
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※この電話機能を用いて電話をすることで、任意の相手と交流をすることができます。相手と交流する事で、次の行動へのヒントを発見する事があります。]
+---
+(if:$KaWa01 &gt;= 1)[[河西研究補助員]]
+(if:$Owner01 &gt;= 1)[[安置室の管理人]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1700,1100" size="100,200">#アイテムメニュー
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※今あなたが持っているものの説明が書かれています。特別なアイテムはメニューを開く事ができます。]
+---
+&lt;!--テンプレート
+(if:「コマンド is not」)[[「アイテム名]」
+	|close&gt;[(link-rerun:&quot;詳細&quot;)[(show:?open)(hide:?close)]]\
+	|open)[詳細。
+	(使い方)(link-rerun:&quot;閉じる&quot;)[(hide:?open)(show:?close)]]
+]
 --&gt;\
 &lt;!--一旦すべてを消すステージ--&gt;\
 &lt;!--アイテム欄--&gt;\
-(if:$commmenu is not)[[研究員用携帯端末]
+(if:$libmenu is 1)[[研究員用携帯端末]
 |phone2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?phone1)(hide:?phone2)]]\
 |phone1)[機関所属研究員にのみ渡された携帯端末。
 研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。
-(研究員に連絡することができる。)(link-rerun:&quot;閉じる&quot;)[(hide:?phone1)(show:?phone2)]　[[使用する-&gt;電話]]
+(研究員に連絡することができます。)(link-rerun:&quot;閉じる&quot;)[(hide:?phone1)(show:?phone2)]　[[使用する-&gt;電話]]
 ]]
 
-(if:$hintmenu is not )[[研究員用ノート]　
+(if:$hintmenu is 2)[[研究員用ノート]　
 |note2&gt;[(link-rerun:&quot;詳細&quot;)[(show:?note1)(hide:?note2)]]\
 |note1)[研究員に配布されている機関専用のノート。
 その大きさからノートというよりもメモ帳と言った方が適切。
 ボールペンホルダーがあるため書き込みやすい。
-(ヒントと用語集を表示することができる。)(link-rerun:&quot;閉じる&quot;)[(hide:?note1)(show:?note2)]\
-　[[ヒントを使用する-&gt;ヒントメニュー]]\
+(用語集を表示することができます。)(link-rerun:&quot;閉じる&quot;)[(hide:?note1)(show:?note2)]\
 　[[用語集を使用する-&gt;ヒントメニュー]]
-]]</tw-passagedata><tw-passagedata pid="34" name="アイテムライブラリ" tags="" position="1450,175" size="100,100">&lt;!--アイテムライブラリ　全てのアイテムの説明をここに記載します--&gt;
+]]
+&lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="34" name="アイテムライブラリ" tags="" position="1450,175" size="100,100">&lt;!--アイテムライブラリ　全てのアイテムの説明をここに記載します--&gt;
 &lt;!--書き方は以下の通り。--&gt;
 ------------
 (hidden:)[説明文]&lt;&quot;タイトル&quot;
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
-研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="用語集" tags="" position="1025,900" size="100,100">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;\
+研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="用語集" tags="" position="1425,1475" size="100,200">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;\
 &lt;!--
 (if:$info1  is 0)[_unkhown]
-	(else:)[説明])
+	(else:)[説明]
 --&gt;\
 (set:_unkhown to &quot;&#39;&#39;ERROR――「現在あなたはこの情報へのアクセス権を所有していません。」&#39;&#39;&quot;)\
-&lt;h1&gt;用語集&lt;/h1&gt;
+#用語集
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※あなたは第四級研究補助員であるため、いくつかの情報へのアクセスが禁止されています。]
 ---
 ###機関&lt;!--ComName=$labinfo--&gt;
 (if:$labinfo1  is 0)[_unkhown] \
 	(else:)[当機関は■■■■年に■■で創設された国際的研究団体です。
 当機関はこの世界における全ての未知の解明、あるいは未知によって引き起こされる社会的混乱の鎮圧、または社会的混乱の未然防止を目的として設立されました。
-当機関は■■■■■■家による資金援助を受け設立されましたが、現在では独立して活動しています。
-当機関は世界各地に支部を有しており、南極、月面、■■支部を含め現在■■■■程度の支部を有しています。
+その施設の目的のため、当機関の存在は機関外のあらゆる人間に認知されておらず、万が一その存在が認知された場合にはレベル3以上の記憶処理処理が実行されます。またこの機関で発見された新たなる原理法則が発見された場合、当研究員が
+当機関は世界各地に支部を有しており、現在では南極、月面、■■支部を含め■■■■程度の支部を有しています。
 ]
 ---
-###人物&lt;!--ComName=$perinfo--&gt;
+###人物&lt;!--ComName=$(per,you)info--&gt;
+(if:$youinfo1  is 0)[_unkhown]
+	(else:)[第四級職員の労働業務は以下の通りです。
+    ・上級職員からの要請の受理、ならびに上級職員による研究の補助
+    ・同級職員とのコミュニケーションシップ
+    ・上級職員の許可を経た上での個人研究
+    ・その他機関内雑務
+ これらの業務を達成できない場合には、機関内プログラムにより、しかるべき処置を実行します。]
 ---
 ###事象&lt;!--ComName=$uniinfo--&gt;
 (if:$uniinfo1  is 0)[_unkhown]
 	(else:)[第二級以上研究員の要請が無い状態での、全事象管理棟への侵入は禁止されています。
-    また、情報セキュリティの観点から、第四級以下研究員の脳波が]</tw-passagedata><tw-passagedata pid="36" name="記録/読込" tags="" position="775,675" size="100,100">{(link:&quot;記録&quot;)[
+    また共通処理手順として、情報セキュリティの観点から、第四級以下研究員が研究の過程で事象と接触した場合、該当過程終了次第該当職員にレベル1の記憶処理が行われます。]
+    &lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+		(set:$undo to 0)\</tw-passagedata><tw-passagedata pid="36" name="記録/読込" tags="" position="300,0" size="100,100">&lt;!--現在は価値無し--&gt;
+{(link:&quot;記録&quot;)[
   (if:(save-game:&quot;Slot&quot;))[
     記録処理が完了しました。
   ](else: )[
@@ -592,36 +665,14 @@ a {
 ]}
 {(if: (saved-games: ) contains &quot;Slot&quot;)[
   (link: &quot;読込&quot;)[(load-game:&quot;Slot&quot;)]
-]}</tw-passagedata><tw-passagedata pid="37" name="河西研究補助員" tags="" position="1150,675" size="100,100">#河西研究補助員
-&lt;!--好感度1の時--&gt;
-(if:$KaWa01 is 1)[\
-	「こんにちは！　今日のお仕事はどうでしたか？　順調？　
-    私はもうクタクタで、もう大変ですよ～。ほら、みてくださいよ、ここアザ！　さっき擦っちゃって、もうあと少しで死んじゃうところでした！いや～、生きててよかった。
-    あ、言わなくてもわかるかもしれませんけど、あんまり張り詰めすぎるとよくないですよ、わたしたち研究補助員なんてたくさんいるんですからね！
-    ---
-    それでなにか用事ですか？」
-    * (link-reveal:&quot;機関について&quot;)[
-    	「ここですか？　そっか、まだきたばかりですもんね。
-        そうですねえ……。ここは通称「機関」。細かな名前があるみたいなんですが、脱走した時に困るから下級職員には名称は明かされていないみたいです。
-        ここの目的は「世界中のありとあらゆる未知の解明とその脅威への対抗手段の構築、脅威からの世界保護」とかだったはずです。まあ、私の担当研究員さんは世界保護とか、そんなコーショーな事、何も考えてないと思いますけど！」]
-     * (link-reveal:&quot;河西について&quot;)[
-    	「私？　なんか照れますねえ、えへへへ……
-        私は河西と言います。下の名前はまだ与えられてないんだよね、結構前に申請出したはずなんだけど……。ええと、君と同じ第四級職員、つまり研究補助員ですね。でも私の方が少しだけ先輩ですが！
-        美味しいものが好きなので、なにかありましたらいつでも呼んでくださいね！」]
-   * (link-reveal:&quot;事象について&quot;)[
-    	「ここでは、世界中の、既知の技術では判別できないありとあらゆるものを「事象」と呼んでいるみたいです。私たちは彼らの謎を解明するために活動していて、私達が上級職員に呼び出されるのも事象のせいってわけで……。そう考えると、ちょっと勘弁してほしいですね。
-        え？一度見てみたいって？　……私達から能動的に見に行くのは無理ですね、私達下級職員はこういうのをむやみに暴けないようになっているので……。
-        ま、私達は上級職員のいう事を聞いてればいいと思いますよ。」]
-   * (link-reveal:&quot;戻る&quot;)[
-   		「またなにかあったらいつでも来てくださいね！」 (after:time + 3s)[(go-to:&quot;メインメニュー&quot;)]]
-   ]</tw-passagedata><tw-passagedata pid="38" name="D棟上部" tags="" position="3400,1875" size="100,100">　#D棟上部
+]}</tw-passagedata><tw-passagedata pid="37" name="D棟上部" tags="" position="3400,1875" size="100,100">　#D棟上部
 ここはまだ何があるかわからない。邪魔にならないように引き返した方がいいだろう。
 &lt;!--初回に入る時のイベント--&gt;\
 (if:visit = 1)[]\
 &lt;!--恒常イベント--&gt;\
 (if:visit &gt;= 2)[]\
 &lt;!--その他--&gt;
-(if:)[]</tw-passagedata><tw-passagedata pid="39" name="ハンバーガーメニュー用1" tags="footer" position="200,0" size="100,100">&lt;div class=&quot;hamburger-menu&quot;&gt;\
+(if:)[]</tw-passagedata><tw-passagedata pid="38" name="ハンバーガーメニュー用1" tags="footer" position="200,0" size="100,100">&lt;div class=&quot;hamburger-menu&quot;&gt;\
         &lt;input type=&quot;checkbox&quot; id=&quot;menu-btn-check&quot;&gt;\
         &lt;label for=&quot;menu-btn-check&quot; class=&quot;menu-btn&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/label&gt;\
       &lt;div class=&quot;menu-content&quot;&gt;\
@@ -633,13 +684,197 @@ a {
       &lt;!--サイドバーの中身と同じ--&gt; \
         (link-style:(color:white))[\
             	(link-undo:&quot;戻る&quot;)
-                (link:&quot;取り消す&quot;)[(forget-undos:-1)]\
+                (if:$mainmenu is 1)[(link:&quot;取り消す&quot;)[(forget-undos:-1)]]\
                     (CSS:&quot;line-height:150%;&quot;)[|sidemenu&gt;[$sidemenu\
                     ]]]\
         &lt;/div&gt;\
-    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="40" name="ベッドで眠る" tags="" position="1850,2675" size="100,100">#ベッド
-&lt;!--他研究員による研究補助依頼によって消耗した体力を回復するための手段。さぼりとして判定してもよい。--&gt;
-現在工事中。</tw-passagedata><tw-passagedata pid="41" name="Untitled Passage" tags="header" position="100,0" size="100,100"></tw-passagedata></tw-storydata>
+    &lt;/div&gt;</tw-passagedata><tw-passagedata pid="39" name="ベッドで眠る" tags="" position="1825,2725" size="100,100">#ベッド
+&lt;!--他研究員による研究補助依頼によって消耗した体力を回復するための手段。さぼりとして判定してもよい。--&gt;\
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※ベッドで眠る事ができます。眠る事によって、消費した体力を回復する事ができたり、時間帯を操作する事ができます。]
+---</tw-passagedata><tw-passagedata pid="40" name="河西研究補助員" tags="" position="1500,800" size="100,100">#河西研究補助員
+---
+&lt;!--変数名＝「KaWa」--&gt;\
+(if:$KaWa01 is 0)[このセリフはデバッグ用だよ！変数が０から戻ってないか確認してくださいね！]\
+&lt;!--好感度1の時--&gt;\
+(if:$KaWa01 is 1)[\
+|KaWa0101&gt;[\
+	「こんにちは！　今日のお仕事はどうでしたか？　順調？　
+    私はもうクタクタで、もう大変ですよ～。ほら、みてくださいよ、ここアザ！　さっき擦っちゃって、もうあと少しで死んじゃうところでした！いや～、生きててよかった。
+    あ、言わなくてもわかるかもしれませんけど、あんまり張り詰めすぎるとよくないですよ、わたしたち研究補助員なんてたくさんいるんですからね！」]
+    ---
+    \
+|KaWa0102&gt;[\
+	「それで、私になにか用事ですか？」 ]
+|KaWa0103&gt;[&lt;!----&gt;\
+|KaWa0103a&gt;[(link-rerun:&quot;機関について&quot;)[(show:?KaWa0103aO)(hide:?KaWa0103a)]]\
+		|KaWa0103aO)[\
+        ---
+        「ここですか？　あそっか、まだ配属されたばかりですもんね。
+    	そうですねえ……。ここは通称「(text-colour:red)[機関]」。細かな名前があるみたいなんですが、脱走した時に困るから下級職員には名称は明かされていないみたいです。
+    	ここの目的は「世界中のありとあらゆる(text-colour:red)[未知の解明]とその脅威への(text-colour:red)[対抗手段の構築]、脅威からの(text-colour:red)[世界保護]」とかだったはずです。まあ、(text-colour:red)[私のとこの担当研究員さん]は世界保護とか、そんなコーショーな事、何も考えてないと思いますけど！」
+        (show:?KaWa0103d)(set:$labinfo1 to 1)\
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103aO)(show:?KaWa0103a)]]
+	|KaWa0103b&gt;[(link-rerun:&quot;あなたについて&quot;)[(show:?KaWa0103bO)(hide:?KaWa0103b)]]\
+		|KaWa0103bO)[\
+        ---
+		「私？　なんか照れますねえ、えへへへ……
+    	私は(text-colour:red)[河西]と言います。下の名前はまだ与えられてないんだよね、結構前に申請出したはずなんだけど……。ええと、君と同じ(text-colour:red)[第四級職員、つまり研究補助員]ですね。でも私の方が少しだけ先輩ですが！
+    	後何か言う事……、あそうだ、美味しいものが好きなので、なにかあったらいつでも呼んでくださいね！」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103bO)(show:?KaWa0103b)]]
+|KaWa0103c&gt;[(link-rerun:&quot;事象について&quot;)[(show:?KaWa0103cO)(hide:?KaWa0103c)]]\
+		|KaWa0103cO)[\
+        ---
+        「ここでは、世界中の、(text-colour:red)[既知の技術では判別できないありとあらゆるもの]を「(text-colour:red)[事象]」と呼んでいるみたいです。私たちは彼らの謎を解明するために活動していて、私達が上級職員に呼び出されるのも事象のせいってわけで……。そう考えると、ちょっと勘弁してほしいですね。
+       	 え？見てみたいって？　……私達から能動的に見に行くのは無理ですね、私達下級職員はこういうのをむやみに暴けないようになっているので……。
+        ま、私達は上級職員のいう事を聞いてればいいと思いますよ。」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103cO)(show:?KaWa0103c)]]
+            &lt;!--非表示で後から出てくる用--&gt;\
+|KaWa0103d)[(link-rerun:&quot;担当研究員？&quot;)[(show:?KaWa0103dO)(hide:?KaWa0103d)]]\
+		|KaWa0103dO)[\
+    ---
+		「えーっと……、あの人の事は知らない方がいいと思いますよ？　知っときたい？　……まあ仕方ないですよねえ。
+		私達研究補助員は機関内に結構在籍しているのですが、その中でも研究員フォローの円滑化という一点において、上位研究員はフォローアップ制度を用いて自身専門の研究補助員を導入する事が「機関」から推奨されています。推奨と言うよりは無理くり押し付けられている、と言った方が正しいんでしょうけど……
+        こういうのは完全にランダムに決まるものみたいなのですが、たまたま私がそれに抜擢されちゃって……。専門補助員は補助員の中でも少ない方なんですよ。
+		それで、担当なんですけど、ホントにもうひどくて！　(color:red)[頬に瑕の入ったメガネの男性]なんですけど、いつも私にしんどい仕事ばかり任せるんです！　いつも研究の事ばかりで私達の事なんてどうでもいいみたいに扱って、もう本当に大変なんですから……、っと、はあ、盛り上がりすぎちゃいました。でも大体そんな感じです、いつかどこかからオファーが来た時は、ちゃんとした研究員さんに見つかるといいですね。でも最高なのはフリーでいる事ですよ！
+       　……え、どこにいるか？　そんなの知らない方がいいですよ！　絶対そうですから！　私の口からは何も言いません、以上！」
+{(set:$HIntworker01 to 1)}(link-rerun:&quot;閉じる&quot;)[(hide:?Kawa0103dO)(show:?Kawa0103d)]]
+|kawa0104&gt;[(link:&quot;戻る&quot;)[\
+   		「またなにかあったらいつでも来てくださいね！」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]]]]
+   {&lt;!--再読込用
+   現在調整中。どうすればいいかわからないので放置。今後の進捗次第で導入する可能性有。
+   ①ドロップダウンで設定した内容のものを表示する。それ以外の物が映るのは勘弁。--&gt;
+   &lt;!--他のセリフを表示しだしたら、現在表示されているセリフを隠す。この仕組みをしっかりさせたい。--&gt;}
+  &lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+  (set:$undo to 1)</tw-passagedata><tw-passagedata pid="41" name="安置室の管理人" tags="" position="1300,800" size="100,100">#安置室の管理人
+---
+&lt;!--変数名＝「Owner」--&gt;\
+(if:$Owner01 is 0)[このセリフはデバッグ用だ。今一度、変数の値を確認してみたらどうだろう？]\
+&lt;!--好感度1の時--&gt;\
+(if:$Owner01 is 1)[\
+[\
+|Owner0101&gt;[\
+	「さて、と……。あ、紅茶飲む？　最近購買にいいお茶が入ってね、うん、結構おいしいんだ。というか、紅茶っていけるクチだっけ？　……まあ、些細な事かな。君にとっては。
+    僕は本当は紅茶よりももっと好きなものがあるんだ。例えばオレンジジュースとか、ほら、あのー、強い炭酸飲料とかさ。僕らみたいな仕事をしていると、鼻がマヒしてくるんだな。保存液の匂いって酷いんだ、もうたまったもんじゃない。だから匂いとか関係ないノが染みるんだ、ちゃんと旨いから。そういう時にそれらは中々良いもんだよ。
+    じゃあ何故紅茶を勧めたのかって？　まあ、そういう日もあるだろうさ」]
+    ---
+\
+|Owner0102&gt;[\
+	「それで、聞きたいことがあるんじゃないか？」 ]
+|Owner0103&gt;[&lt;!----&gt;\
+|Owner0103a&gt;[(link-rerun:&quot;あなたは何者か&quot;)[(show:?Owner0103aO)(hide:?Owner0103a)]]\
+		|Owner0103aO)[「僕は被検体安置室の管理人だよ。名前は無いから皆僕の事を管理人と呼んでいる。他にも誰かに管理されてるものがあるだろうに、不思議だね？　
+        ホントのところ、僕はもう何者かわからなくなってしまいそうさ。僕はかれこれウン十年もここにいるんだ。相応だろう？　名前もないままにね。彼らからしたら僕の名前なんて些末なものはどうでもいいのかもしれないな。
+        君は、君が君でいられるという証拠があるかい？」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?Owner0103aO)(show:?Owner0103a)]]
+	|Owner0103b&gt;[(link-rerun:&quot;安置室について&quot;)[(show:?Owner0103bO)(hide:?Owner0103b)]]\
+		|Owner0103bO)[被検体安置室。機関ではその存在意義から人間に対する薬物実験も行われている。そういう時に生きた人間を用いるのは忍びないから死体を用意しておく。そのための被検体を保管しておく部屋さ。つまり、あそこで浮かんでいるのは正真正銘の死体だよ。
+        意外と形を保っているもんだろう？　これは僕の技術の賜物なんだ。転職してもこんなの中々生かせないけどね。でも僕の技術さ」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?Owner0103bO)(show:?Owner0103b)]]
+|Owner0103c&gt;[(link-rerun:&quot;手伝えることはないか&quot;)[(show:?Owner0103cO)(hide:?Owner0103c)]]\
+		|Owner0103cO)[「ん～……、今のところはないかな。なにせ、僕のする事って事後処理だから、別に君に頼まなくても何とでもなる事が多いんだよね。
+        でもまあ、忙しくなってきたら君を呼ぶかもしれないな。でも手でさえあればいいから別に君であると限ったわけでもない。君の質問の難しさが滲み出ているね」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?Owner0103cO)(show:?Owner0103c)]]
+            &lt;!--非表示で後から出てくる用--&gt;
+|Owner0103d)[(link-rerun:&quot;質問その4&quot;)[(show:?Owner0103dO)(hide:?Owner0103d)]]\
+		|Owner0103dO)[詳細
+	(link-rerun:&quot;閉じる&quot;)[(hide:?Owner0103dO)(show:?Owner0103d)]]
+
+]]
+|Owner0104&gt;[(link:&quot;戻る&quot;)[
+   		「もしかしたら、何かある時は君を呼ぶかもしれないね。」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]
+   ]\
+{}\
+   {&lt;!--再読込用
+   現在調整中。どうすればいいかわからないので放置。今後の進捗次第で導入する可能性有。
+   ①ドロップダウンで設定した内容のものを表示する。それ以外の物が映るのは勘弁。--&gt;
+   &lt;!--他のセリフを表示しだしたら、現在表示されているセリフを隠す。この仕組みをしっかりさせたい。--&gt;}
+   &lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+  (set:$undo to 1)</tw-passagedata><tw-passagedata pid="42" name="会話用フォーマット" tags="" position="975,900" size="100,100">#
+&lt;!--変数名＝「名前」--&gt;
+&lt;!--好感度1の時--&gt;
+[\
+|0101&gt;[\
+	「&lt;!--初めの文--&gt;」]
+    ---
+\
+|0102&gt;[\
+	「&lt;!--質問文--&gt;」 ]
+|0103&gt;[&lt;!----&gt;
+|0103a&gt;[(link-rerun:&quot;質問その1&quot;)[(show:?0103aO)(hide:?0103a)]]\
+		|0103aO)[詳細
+	(link-rerun:&quot;閉じる&quot;)[(hide:?0103aO)(show:?0103a)]]
+	|0103b&gt;[(link-rerun:&quot;質問その2&quot;)[(show:?0103bO)(hide:?0103b)]]\
+		|0103bO)[詳細
+	(link-rerun:&quot;閉じる&quot;)[(hide:?0103bO)(show:?0103b)]]
+|0103c&gt;[(link-rerun:&quot;質問その3&quot;)[(show:?0103cO)(hide:?0103c)]]\
+		|0103cO)[詳細
+	(link-rerun:&quot;閉じる&quot;)[(hide:?0103cO)(show:?0103c)]]
+            &lt;!--非表示で後から出てくる用--&gt;
+|0103d)[(link-rerun:&quot;質問その4&quot;)[(show:?0103dO)(hide:?0103d)]]\
+		|0103dO)[詳細
+	(link-rerun:&quot;閉じる&quot;)[(hide:?0103dO)(show:?0103d)]]
+
+]]
+|0104&gt;[(link:&quot;戻る&quot;)[
+   		「」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]
+   ]\
+{}\
+   {&lt;!--再読込用
+   現在調整中。どうすればいいかわからないので放置。今後の進捗次第で導入する可能性有。
+   ①ドロップダウンで設定した内容のものを表示する。それ以外の物が映るのは勘弁。--&gt;
+   &lt;!--他のセリフを表示しだしたら、現在表示されているセリフを隠す。この仕組みをしっかりさせたい。--&gt;}
+   &lt;!--システム面--&gt;\
+	&lt;!--戻るコマンド設置用--&gt;\
+  (set:$undo to 1)</tw-passagedata><tw-passagedata pid="43" name="Untitled Passage" tags="" position="550,175" size="100,100">[\
+|KaWa0101&gt;[\
+	「こんにちは！　今日のお仕事はどうでしたか？　順調？　
+    私はもうクタクタで、もう大変ですよ～。ほら、みてくださいよ、ここアザ！　さっき擦っちゃって、もうあと少しで死んじゃうところでした！いや～、生きててよかった。
+    あ、言わなくてもわかるかもしれませんけど、あんまり張り詰めすぎるとよくないですよ、わたしたち研究補助員なんてたくさんいるんですからね！」]
+    ---
+    \
+|KaWa0102&gt;[\
+	「それで、私になにか用事ですか？」 ]
+|KaWa0103&gt;[&lt;!----&gt;\
+|KaWa0103a&gt;[(link-rerun:&quot;機関について&quot;)[(show:?KaWa0103aO)(hide:?KaWa0103a)]]\
+		|KaWa0103aO)[\
+        ---
+        「ここですか？　あそっか、まだ配属されたばかりですもんね。
+    	そうですねえ……。ここは通称「(text-colour:red)[機関]」。細かな名前があるみたいなんですが、脱走した時に困るから下級職員には名称は明かされていないみたいです。
+    	ここの目的は「世界中のありとあらゆる(text-colour:red)[未知の解明]とその脅威への(text-colour:red)[対抗手段の構築]、脅威からの(text-colour:red)[世界保護]」とかだったはずです。まあ、(text-colour:red)[私のとこの担当研究員さん]は世界保護とか、そんなコーショーな事、何も考えてないと思いますけど！」
+        (show:?KaWa0103d)(set:$labinfo1 to 1)\
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103aO)(show:?KaWa0103a)]]
+	|KaWa0103b&gt;[(link-rerun:&quot;あなたについて&quot;)[(show:?KaWa0103bO)(hide:?KaWa0103b)]]\
+		|KaWa0103bO)[\
+        ---
+		「私？　なんか照れますねえ、えへへへ……
+    	私は(text-colour:red)[河西]と言います。下の名前はまだ与えられてないんだよね、結構前に申請出したはずなんだけど……。ええと、君と同じ(text-colour:red)[第四級職員、つまり研究補助員]ですね。でも私の方が少しだけ先輩ですが！
+    	後何か言う事……、あそうだ、美味しいものが好きなので、なにかあったらいつでも呼んでくださいね！」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103bO)(show:?KaWa0103b)]]
+|KaWa0103c&gt;[(link-rerun:&quot;事象について&quot;)[(show:?KaWa0103cO)(hide:?KaWa0103c)]]\
+		|KaWa0103cO)[\
+        ---
+        「ここでは、世界中の、(text-colour:red)[既知の技術では判別できないありとあらゆるもの]を「(text-colour:red)[事象]」と呼んでいるみたいです。私たちは彼らの謎を解明するために活動していて、私達が上級職員に呼び出されるのも事象のせいってわけで……。そう考えると、ちょっと勘弁してほしいですね。
+       	 え？見てみたいって？　……私達から能動的に見に行くのは無理ですね、私達下級職員はこういうのをむやみに暴けないようになっているので……。
+        ま、私達は上級職員のいう事を聞いてればいいと思いますよ。」
+	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103cO)(show:?KaWa0103c)]]
+            &lt;!--非表示で後から出てくる用--&gt;\
+|KaWa0103d)[(link-rerun:&quot;担当研究員？&quot;)[(show:?KaWa0103dO)(hide:?KaWa0103d)]]\
+		|KaWa0103dO)[\
+    ---
+		「えーっと……、あの人の事は知らない方がいいと思いますよ？　知っときたい？　……まあ仕方ないですよねえ。
+		私達研究補助員は機関内に結構在籍しているのですが、その中でも研究員フォローの円滑化という一点において、上位研究員はフォローアップ制度を用いて自身専門の研究補助員を導入する事が「機関」から推奨されています。推奨と言うよりは無理くり押し付けられている、と言った方が正しいんでしょうけど……
+        こういうのは完全にランダムに決まるものみたいなのですが、たまたま私がそれに抜擢されちゃって……。専門補助員は補助員の中でも少ない方なんですよ。
+		それで、担当なんですけど、ホントにもうひどくて！　(color:red)[頬に瑕の入ったメガネの男性]なんですけど、いつも私にしんどい仕事ばかり任せるんです！　いつも研究の事ばかりで私達の事なんてどうでもいいみたいに扱って、もう本当に大変なんですから……、っと、はあ、盛り上がりすぎちゃいました。でも大体そんな感じです、いつかどこかからオファーが来た時は、ちゃんとした研究員さんに見つかるといいですね。でも最高なのはフリーでいる事ですよ！」
+{(set:$HIntworker01 to 1)}
+	(link-rerun:&quot;閉じる&quot;)[(hide:?0103dO)(show:?0103d)]]]
+    
+|kawa0104&gt;[(link:&quot;戻る&quot;)[
+   		「またなにかあったらいつでも来てくださいね！」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]]</tw-passagedata><tw-passagedata pid="44" name="購買" tags="" position="250,1750" size="100,100">#購買
+(text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※何かしらのアイテムを、機関内通貨を使用する事で購入する事ができます。]
+---</tw-passagedata><tw-passagedata pid="45" name="「戻る」コマンド" tags="footer" position="2050,1600" size="100,100">(if:$undo is not 1)[[
+廊下へ戻る-&gt;メインメニュー]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
