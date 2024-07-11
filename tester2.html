@@ -9,7 +9,7 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play 1.機関研究員職業体験.</tw-noscript></noscript></tw-story>
-<tw-storydata name="1.機関研究員職業体験" startnode="28" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="1A04B8EB-5077-4382-9AE0-51A076C10B01" options="" tags="システム導入用" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "UserStylesheet" */
+<tw-storydata name="1.機関研究員職業体験" startnode="28" creator="Twine" creator-version="2.9.0" format="Harlowe" format-version="3.3.9" ifid="1A04B8EB-5077-4382-9AE0-51A076C10B01" options="" tags="システム導入用" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* twine-user-stylesheet #1: "UserStylesheet" */
 /*
 	Reposition the Sidebar 'footer' tagged passage.
 */
@@ -223,6 +223,8 @@ tw-icon {
 
 [[業務を開始する。-&gt;メインメニュー]]\
 {(set:$youinfo to 1)
+(set:$youinfo1 to 1)
+(set:$labinfo1 to 1)
 (set:$hintB2 to 1)}</tw-passagedata><tw-passagedata pid="2" name="end1　除名完了" tags="" position="2300,1400" size="100,100">{
 &lt;head&gt;
 &lt;style&gt;
@@ -254,7 +256,7 @@ a {
 &lt;/ul&gt;
 &lt;!--システム面--&gt;\
 	&lt;!--戻るコマンド設置用--&gt;\
-		(set:$undo to 1)</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="875,1700" size="100,200">#中央棟
+		(set:$undo to 1)</tw-passagedata><tw-passagedata pid="4" name="中央棟" tags="" position="900,1700" size="100,200">#中央棟
 ---
 * [[広場-&gt;中央広場]]
 * [[1階-&gt;中央棟1階（購買室）]](if: $hintCe1 &gt;= 1)[(購買室)]
@@ -263,7 +265,7 @@ a {
 * [[それ以上へ-&gt;中央棟上部(第一級職員専用開閉扉)]]
 &lt;!--システム面--&gt;\
 	&lt;!--戻るコマンド設置用--&gt;\
-		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1400,2150" size="100,200">#A棟
+		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="5" name="A棟" tags="移動用" position="1300,2200" size="100,200">#A棟
 ---
 * [[一階-&gt;A棟一階]]
 * [[二階-&gt;A棟2階(研究補助員用休憩室)]](if: $hintA2 &gt;= 1)[(研究補助員休憩室)]
@@ -320,7 +322,7 @@ a {
 
         	彼女はにこやかな口調で声をかけてきた。どうやらこちらに敵意はないらしい、何か困りごとがあった時は彼女に声をかけて相談した方がいいかもしれない。
             &lt;!--システム情報--&gt;
-            (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)
+            (colour:yellow)[河西と知り合いになった。](set:$KaWa01=1)(set:$KaWainfo to 1)
             (if:$hintCe1 is 0)[(colour:yellow)[購買室の位置がわかった。] (set:$hintCe1=it+2)]
             (if:$hintA2 is 0)[(colour:yellow)[A棟2階が判明した。](set:$hintA2=it+2)]
             &lt;!--訪れフラグ管理--&gt;\
@@ -607,14 +609,14 @@ D棟の2階にたどり着いた。
 }\
 &lt;!--システム面--&gt;\
 	&lt;!--戻るコマンド設置用--&gt;\
-		(set:$undo to 0)\</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1425,1050" size="100,200">#電話
+		(set:$undo to 0)\</tw-passagedata><tw-passagedata pid="32" name="電話" tags="" position="1300,1000" size="100,200">#電話
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※この電話機能を用いて電話をすることで、任意の相手と交流をすることができます。相手と交流する事で、次の行動へのヒントを発見する事があります。]
 ---
 (if:$KaWa01 &gt;= 1)[[河西研究補助員]]
 (if:$Owner01 &gt;= 1)[[安置室の管理人]]
 &lt;!--システム面--&gt;\
 	&lt;!--戻るコマンド設置用--&gt;\
-		(set:$undo to 0)</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1700,1100" size="100,200">#アイテムメニュー
+		(set:$undo to 0</tw-passagedata><tw-passagedata pid="33" name="アイテム" tags="" position="1700,1000" size="100,200">#アイテムメニュー
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※今あなたが持っているものの説明が書かれています。特別なアイテムはメニューを開く事ができます。]
 ---
 &lt;!--テンプレート
@@ -651,7 +653,7 @@ D棟の2階にたどり着いた。
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
 研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="35" name="用語集" tags="" position="1425,1475" size="100,200">&lt;!--リストを生成する時にしようと思ってた。実際に動かせれば最高。--&gt;\
 &lt;!--
-(if:$info1  is 0)[_unkhown]
+(if:$info1  is 0)[_unkhown]\
 	(else:)[説明]
 --&gt;\
 (set:_unkhown to &quot;&#39;&#39;ERROR――「現在あなたはこの情報へのアクセス権を所有していません。」&#39;&#39;&quot;)\
@@ -662,19 +664,36 @@ D棟の2階にたどり着いた。
 (if:$labinfo1  is 0)[_unkhown] \
 	(else:)[当機関は■■■■年に■■で創設された国際的研究団体です。
 当機関はこの世界における全ての未知の解明、あるいは未知によって引き起こされる社会的混乱の鎮圧、または社会的混乱の未然防止を目的として設立されました。
-その施設の目的のため、当機関の存在は機関外のあらゆる人間に認知されておらず、万が一その存在が認知された場合にはレベル3以上の記憶処理処理が実行されます。またこの機関で発見された新たなる原理法則が発見された場合、当研究員が
+その施設の目的のため、当機関の存在は機関外のあらゆる人間に認知されておらず、万が一その存在が認知された場合にはレベル3以上の記憶処理処理が実行されます。またこの機関で発見された新たなる原理法則が発見された場合、
 当機関は世界各地に支部を有しており、現在では南極、月面、■■支部を含め■■■■程度の支部を有しています。
-]
----
+
+]\
 ###人物&lt;!--ComName=$(per,you)info--&gt;
-(if:$youinfo1  is 0)[_unkhown]
+(if:$youinfo &gt;= 1)[\
+####一般研究員
+---
+]\
+(if:$youinfo1  is 0)[_unkhown]\
 	(else:)[第四級職員の労働業務は以下の通りです。
     ・上級職員からの要請の受理、ならびに上級職員による研究の補助
     ・同級職員とのコミュニケーションシップ
     ・上級職員の許可を経た上での個人研究
     ・その他機関内雑務
- これらの業務を達成できない場合には、機関内プログラムにより、しかるべき処置を実行します。]
+ これらの業務を達成できない場合には、機関内プログラムにより、しかるべき処置を実行します。
+ ---
+ ]\
+(if:$KaWainfo &gt;= 1)[\
+####河西研究補助員
 ---
+]\
+(if:$Kawainfo1  is 0)[_unkhown]\
+	(else:)[河西研究員。
+    ---]
+(if:$Ownerinfo &gt;= 1)[\
+####安置室の管理人
+---]
+	(if:$Ownerinfo1  is 0)[_unkhown]
+	(else:)[説明]
 ###事象&lt;!--ComName=$uniinfo--&gt;
 (if:$uniinfo1  is 0)[_unkhown]
 	(else:)[第二級以上研究員の要請が無い状態での、全事象管理棟への侵入は禁止されています。
@@ -718,7 +737,7 @@ D棟の2階にたどり着いた。
 &lt;!--他研究員による研究補助依頼によって消耗した体力を回復するための手段。さぼりとして判定してもよい。--&gt;\
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※ベッドで眠る事ができます。眠る事によって、消費した体力を回復する事ができたり、時間帯を操作する事ができます。]
 ---
-現状では何も行動を起こす事はできません。</tw-passagedata><tw-passagedata pid="40" name="河西研究補助員" tags="" position="1500,800" size="100,100">#河西研究補助員
+現状では何も行動を起こす事はできません。</tw-passagedata><tw-passagedata pid="40" name="河西研究補助員" tags="" position="1300,800" size="100,100">#河西研究補助員
 ---
 &lt;!--変数名＝「KaWa」--&gt;\
 (if:$KaWa01 is 0)[このセリフはデバッグ用だよ！変数が０から戻ってないか確認してくださいね！]\
@@ -747,6 +766,7 @@ D棟の2階にたどり着いた。
 		「私？　なんか照れますねえ、えへへへ……
     	私は(text-colour:red)[河西]と言います。下の名前はまだ与えられてないんだよね、結構前に申請出したはずなんだけど……。ええと、君と同じ(text-colour:red)[第四級職員、つまり研究補助員]ですね。でも私の方が少しだけ先輩ですが！
     	後何か言う事……、あそうだ、美味しいものが好きなので、なにかあったらいつでも呼んでくださいね！」
+        (set:$KaWainfo1 is 1)\
 	(link-rerun:&quot;閉じる&quot;)[(hide:?KaWa0103bO)(show:?KaWa0103b)]]
 |KaWa0103c&gt;[(link-rerun:&quot;事象について&quot;)[(show:?KaWa0103cO)(hide:?KaWa0103c)]]\
 		|KaWa0103cO)[\
@@ -773,7 +793,7 @@ D棟の2階にたどり着いた。
    &lt;!--他のセリフを表示しだしたら、現在表示されているセリフを隠す。この仕組みをしっかりさせたい。--&gt;}
   &lt;!--システム面--&gt;\
 	&lt;!--戻るコマンド設置用--&gt;\
-  (set:$undo to 1)</tw-passagedata><tw-passagedata pid="41" name="安置室の管理人" tags="" position="1300,800" size="100,100">#安置室の管理人
+  (set:$undo to 1)</tw-passagedata><tw-passagedata pid="41" name="安置室の管理人" tags="" position="1200,700" size="100,100">#安置室の管理人
 ---
 &lt;!--変数名＝「Owner」--&gt;\
 (if:$Owner01 is 0)[このセリフはデバッグ用だ。今一度、変数の値を確認してみたらどうだろう？]\
@@ -809,9 +829,8 @@ D棟の2階にたどり着いた。
 
 ]]
 |Owner0104&gt;[(link:&quot;戻る&quot;)[
-   		「もしかしたら、何かある時は君を呼ぶかもしれないね。」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]
+   		「もしかしたら、またいつか君を呼ぶかもしれないね。」 (after:time + 2.5s)[(go-to:&quot;メインメニュー&quot;)]]
    ]\
-{}\
    {&lt;!--再読込用
    現在調整中。どうすればいいかわからないので放置。今後の進捗次第で導入する可能性有。
    ①ドロップダウンで設定した内容のものを表示する。それ以外の物が映るのは勘弁。--&gt;
