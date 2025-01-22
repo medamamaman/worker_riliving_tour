@@ -479,7 +479,7 @@ D棟の2階にたどり着いた。
 (hidden:)[説明文]&lt;&quot;タイトル&quot;
 ------------
 (hidden:)[機関所属研究員にのみ渡された携帯端末。
-研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="25" name="サイドバー" tags="footer" position="1750,1500" size="200,200">(set:$sidemenu to [\
+研究補助員用のデバイスではいくつか機能がロックされており、職員への連絡にのみ使用する事ができる。]&lt;Phonelib|</tw-passagedata><tw-passagedata pid="25" name="サイドバー" tags="footer" position="1700,1400" size="200,200">(set:$sidemenu to [\
 	(if:$mainmenu is not 0)[&lt;hr&gt;[[メインメニュー]]]\
     (if:$hintmenu is not 0)[&lt;hr&gt;[[ヒントメニュー]]]\
     (if:$itemmenu is not 0)[&lt;hr&gt;[[アイテム]]]\
@@ -627,7 +627,7 @@ D棟の2階にたどり着いた。
 『それでは、新人研究員用アナウンスメント及び新人研修講習を終了いたします。』
 
 
-[[業務を開始する。-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="31" name="メインメニュー" tags="" position="2000,2000" size="200,200">#廊下(メインメニュー)\
+[[業務を開始する。-&gt;メインメニュー]]</tw-passagedata><tw-passagedata pid="31" name="メインメニュー" tags="" position="2000,1900" size="200,200">#廊下(メインメニュー)\
 {
 	(set:$mainmenu to 1)
     (set:$hintmenu to 1)
@@ -881,7 +881,13 @@ D棟の2階にたどり着いた。
 (if:$info1  &gt;= 0)[_unkhown]\
 	(else:)[説明]
 --&gt;\
-(set:_unkhown to &quot;&#39;&#39;ERROR――「現在あなたはこの情報へのアクセス権を所有していません。」&#39;&#39;&quot;)\
+&lt;!--システム面--&gt;
+	&lt;!--非表示時の文言自動設定--&gt;
+(set:_unkhown to &quot;&#39;&#39;ERROR――「現在あなたはこの情報へのアクセス権を所有していません。」&quot;)\
+	&lt;!--不明時の名義--&gt;
+    (set:_b to &quot;■■■&quot;)
+    	&lt;!--職員--&gt;
+        	(unless:$workerinfo is 1)[(replace:&quot;B-31職員&quot;,)[_b]]
 #用語集
 (text-size:0.7)+(b4r:&quot;none&quot;,&quot;none&quot;,&quot;solid&quot;)+(b4r-colour:white,white,black)[※あなたは第四級研究補助員であるため、いくつかの情報へのアクセスが禁止されています。]
 ---
@@ -894,7 +900,7 @@ D棟の2階にたどり着いた。
 
 ]\
 ###人物&lt;!--ComName=$(per,you)info--&gt;
-(if:$youinfo &gt;= 1)[\
+&lt;!--あなた--&gt;(if:$youinfo &gt;= 1)[\
 ####一般研究員
 ---
 ]\
@@ -907,12 +913,12 @@ D棟の2階にたどり着いた。
  これらの業務を達成できない場合には、機関内プログラムにより、しかるべき処置を実行します。
  ---
  ]\
-(if:$KaWainfo &gt;= 1)[\
+&lt;!--河西さん--&gt;(if:$KaWainfo &gt;= 1)[\
 ####河西研究補助員
 ---
 ]
 (if:$Kawainfo1  &gt;= 0)[_unkhown]\
-	(else:)[番号「D-43-1」（以下「河西」と記す）は第三級
+	(else:)[番号「D-43-1」（以下「河西」と記す）は(if:$Workerinfo&gt;=1)[B-31職員](else:)[■■■■]専属雇用の第四級職員および研究補助員です。
     ---]
 (if:$Ownerinfo &gt;= 1)[\
 ####安置室の管理人
@@ -953,8 +959,8 @@ D棟の2階にたどり着いた。
 (set:$labinfo1 to 1)
 (set:$hintB2 to 1)
 &lt;!--マクロの獲得--&gt;
-   (set:$macrotest to (macro:str-type _test2 ,[(text-style:&quot;underline&quot;,&quot;expand&quot;)+(text-size:1.2)[(output:)[_test2]]]))
-   (print:($macrotest:&quot;テスト&quot;))</tw-passagedata></tw-storydata>
+	&lt;!--質問文の制作（文字を大きくし下線を引く）--&gt;
+    	(set:$questitle to (macro:str-type _questitle ,[(output:)+(text-style:&quot;underline&quot;,&quot;expand&quot;)+(text-size:1.2)[_questitle]]))</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim
